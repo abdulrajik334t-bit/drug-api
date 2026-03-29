@@ -7,7 +7,9 @@ app.use(cors());
 const data = [
   { drug1: "aspirin", drug2: "warfarin", severity: "High", message: "Severe bleeding risk" },
   { drug1: "ibuprofen", drug2: "paracetamol", severity: "Low", message: "Safe in normal dose" }
-];
+];app.get("/", (req, res) => {
+  res.send("Drug Interaction API Running ✅");
+});
 
 app.get("/check", (req, res) => {
   let d1 = req.query.drug1.toLowerCase();
