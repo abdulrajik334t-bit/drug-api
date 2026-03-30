@@ -26,13 +26,19 @@ app.get("/check", (req, res) => {
 app.get("/ai", (req, res) => {
   let msg = req.query.msg.toLowerCase();
 
-  let reply = "Sorry, I don't understand.";
+  let reply = "Sorry, I don't understand. Please ask about medicines.";
 
-  if (msg.includes("aspirin")) {
-    reply = "Aspirin is a blood thinner. Avoid with warfarin.";
-  } 
+  if (msg.includes("aspirin") && msg.includes("warfarin")) {
+    reply = "⚠️ High risk: Aspirin + Warfarin can cause severe bleeding.";
+  }
+  else if (msg.includes("aspirin")) {
+    reply = "Aspirin is used for pain and blood thinning.";
+  }
   else if (msg.includes("paracetamol")) {
-    reply = "Paracetamol is generally safe in normal doses.";
+    reply = "Paracetamol is safe for fever and pain in normal doses.";
+  }
+  else if (msg.includes("interaction")) {
+    reply = "Drug interaction occurs when two medicines affect each other.";
   }
 
   res.json({ reply });
