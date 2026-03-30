@@ -1,0 +1,487 @@
+{
+  "Paracetamol": [
+    {"drug":"Ibuprofen","severity":"minor","case":"May increase stomach irritation"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase bleeding risk"},
+    {"drug":"Aspirin","severity":"minor","case":"No major interaction"}
+  ],
+  "Ibuprofen": [
+    {"drug":"Paracetamol","severity":"minor","case":"No major interaction"},
+    {"drug":"Aspirin","severity":"major","case":"May increase bleeding risk"},
+    {"drug":"Naproxen","severity":"moderate","case":"Additive stomach irritation"}
+  ],
+  "Warfarin": [
+    {"drug":"Paracetamol","severity":"moderate","case":"May increase bleeding risk"},
+    {"drug":"Aspirin","severity":"major","case":"High bleeding risk"},
+    {"drug":"Clopidogrel","severity":"major","case":"Increased risk of hemorrhage"}
+  ],
+  "Aspirin": [
+    {"drug":"Ibuprofen","severity":"major","case":"May reduce cardioprotective effect"},
+    {"drug":"Warfarin","severity":"major","case":"High bleeding risk"},
+    {"drug":"Paracetamol","severity":"minor","case":"No major interaction"}
+  ],
+  "Naproxen": [
+    {"drug":"Ibuprofen","severity":"moderate","case":"Additive GI side effects"},
+    {"drug":"Diclofenac","severity":"moderate","case":"Increased stomach irritation"},
+    {"drug":"Paracetamol","severity":"minor","case":"No significant interaction"}
+  ],
+  "Diclofenac": [
+    {"drug":"Naproxen","severity":"moderate","case":"Additive GI side effects"},
+    {"drug":"Aspirin","severity":"minor","case":"Slight increase in bleeding risk"},
+    {"drug":"Ibuprofen","severity":"moderate","case":"Additive stomach irritation"}
+  ],
+  "Clopidogrel": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Aspirin","severity":"moderate","case":"Additive antiplatelet effect"},
+    {"drug":"Prasugrel","severity":"major","case":"High bleeding risk"}
+  ],
+  "Prasugrel": [
+    {"drug":"Clopidogrel","severity":"major","case":"High bleeding risk"},
+    {"drug":"Aspirin","severity":"minor","case":"No significant interaction"},
+    {"drug":"Warfarin","severity":"moderate","case":"Monitor INR closely"}
+  ],
+  "Metformin": [
+    {"drug":"Glipizide","severity":"moderate","case":"Risk of hypoglycemia"},
+    {"drug":"Cimetidine","severity":"minor","case":"May increase metformin levels"},
+    {"drug":"Furosemide","severity":"minor","case":"May reduce metformin efficacy"}
+  ],
+  "Glipizide": [
+    {"drug":"Metformin","severity":"moderate","case":"Risk of hypoglycemia"},
+    {"drug":"Warfarin","severity":"minor","case":"May affect glucose control"},
+    {"drug":"Aspirin","severity":"moderate","case":"May increase hypoglycemia risk"}
+  ],
+  "Furosemide": [
+    {"drug":"Digoxin","severity":"major","case":"Increased risk of toxicity"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"Metformin","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Digoxin": [
+    {"drug":"Furosemide","severity":"major","case":"Increased toxicity risk"},
+    {"drug":"Amiodarone","severity":"moderate","case":"May increase serum digoxin"},
+    {"drug":"Verapamil","severity":"minor","case":"Monitor closely"}
+  ],
+  "Amiodarone": [
+    {"drug":"Digoxin","severity":"moderate","case":"May increase serum digoxin"},
+    {"drug":"Warfarin","severity":"major","case":"Bleeding risk increases"},
+    {"drug":"Simvastatin","severity":"minor","case":"May increase statin levels"}
+  ],
+  "Simvastatin": [
+    {"drug":"Amiodarone","severity":"minor","case":"May increase statin levels"},
+    {"drug":"Grapefruit juice","severity":"major","case":"Risk of myopathy"},
+    {"drug":"Warfarin","severity":"moderate","case":"May affect INR"}
+  ],
+  "Omeprazole": [
+    {"drug":"Clopidogrel","severity":"moderate","case":"May reduce effectiveness"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Methotrexate","severity":"major","case":"Increased toxicity risk"}
+  ],
+  "Methotrexate": [
+    {"drug":"Omeprazole","severity":"major","case":"Increased toxicity risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May increase side effects"},
+    {"drug":"Folic acid","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Cimetidine": [
+    {"drug":"Metformin","severity":"minor","case":"May increase metformin levels"},
+    {"drug":"Warfarin","severity":"moderate","case":"Monitor INR"},
+    {"drug":"Theophylline","severity":"major","case":"Increased serum levels"}
+  ],
+  "Theophylline": [
+    {"drug":"Cimetidine","severity":"major","case":"Increased serum levels"},
+    {"drug":"Erythromycin","severity":"moderate","case":"May increase toxicity"},
+    {"drug":"Albuterol","severity":"minor","case":"No significant interaction"}
+  ],
+  "Erythromycin": [
+    {"drug":"Theophylline","severity":"moderate","case":"May increase toxicity"},
+    {"drug":"Simvastatin","severity":"major","case":"High myopathy risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Albuterol": [
+    {"drug":"Theophylline","severity":"minor","case":"No significant interaction"},
+    {"drug":"Beta blockers","severity":"moderate","case":"May reduce effectiveness"},
+    {"drug":"Diuretics","severity":"minor","case":"Monitor potassium levels"}
+  ],
+  "Losartan": [
+    {"drug":"Lisinopril","severity":"moderate","case":"May increase risk of hyperkalemia"},
+    {"drug":"Furosemide","severity":"minor","case":"May reduce antihypertensive effect"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May decrease efficacy"}
+  ],
+  "Lisinopril": [
+    {"drug":"Losartan","severity":"moderate","case":"May increase hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"High hyperkalemia risk"},
+    {"drug":"Diuretics","severity":"minor","case":"Monitor blood pressure"}
+  ],
+  "Hydrochlorothiazide": [
+    {"drug":"Digoxin","severity":"major","case":"Increased digoxin toxicity risk"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce diuretic effect"}
+  ],
+  "Amlodipine": [
+    {"drug":"Simvastatin","severity":"minor","case":"May increase statin levels"},
+    {"drug":"Grapefruit juice","severity":"moderate","case":"Monitor blood pressure"},
+    {"drug":"Beta blockers","severity":"minor","case":"No significant interaction"}
+  ],
+  "Metoprolol": [
+    {"drug":"Verapamil","severity":"major","case":"May cause bradycardia or heart block"},
+    {"drug":"Digoxin","severity":"moderate","case":"Monitor heart rate"},
+    {"drug":"Albuterol","severity":"minor","case":"May reduce effectiveness"}
+  ],
+  "Verapamil": [
+    {"drug":"Metoprolol","severity":"major","case":"Bradycardia risk"},
+    {"drug":"Digoxin","severity":"moderate","case":"Monitor serum levels"},
+    {"drug":"Simvastatin","severity":"minor","case":"May increase statin levels"}
+  ],
+  "Atorvastatin": [
+    {"drug":"Grapefruit juice","severity":"major","case":"High risk of myopathy"},
+    {"drug":"Amiodarone","severity":"minor","case":"May increase statin levels"},
+    {"drug":"Warfarin","severity":"moderate","case":"May affect INR"}
+  ],
+  "Rosuvastatin": [
+    {"drug":"Cyclosporine","severity":"major","case":"High myopathy risk"},
+    {"drug":"Gemfibrozil","severity":"moderate","case":"May increase statin levels"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Levothyroxine": [
+    {"drug":"Calcium supplements","severity":"moderate","case":"May reduce absorption"},
+    {"drug":"Iron supplements","severity":"moderate","case":"Take 4 hours apart"},
+    {"drug":"Warfarin","severity":"minor","case":"May increase anticoagulant effect"}
+  ],
+  "Calcium carbonate": [
+    {"drug":"Levothyroxine","severity":"moderate","case":"May reduce absorption"},
+    {"drug":"Tetracyclines","severity":"major","case":"Reduced antibiotic absorption"},
+    {"drug":"Fluoroquinolones","severity":"moderate","case":"May reduce efficacy"}
+  ],
+  "Iron sulfate": [
+    {"drug":"Levothyroxine","severity":"moderate","case":"Take 4 hours apart"},
+    {"drug":"Tetracyclines","severity":"major","case":"Reduced antibiotic absorption"},
+    {"drug":"Fluoroquinolones","severity":"moderate","case":"May reduce efficacy"}
+  ],
+  "Tetracycline": [
+    {"drug":"Calcium carbonate","severity":"major","case":"Reduced absorption"},
+    {"drug":"Iron supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Fluoroquinolones": [
+    {"drug":"Calcium carbonate","severity":"moderate","case":"May reduce efficacy"},
+    {"drug":"Iron supplements","severity":"moderate","case":"May reduce efficacy"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Amoxicillin": [
+    {"drug":"Methotrexate","severity":"moderate","case":"May increase toxicity"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Allopurinol","severity":"minor","case":"May increase rash risk"}
+  ],
+  "Clavulanate": [
+    {"drug":"Amoxicillin","severity":"minor","case":"Usually combined, monitor side effects"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Allopurinol","severity":"minor","case":"May increase rash risk"}
+  ],
+  "Azithromycin": [
+    {"drug":"Simvastatin","severity":"moderate","case":"May increase myopathy risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of arrhythmia"}
+  ],
+  "Ciprofloxacin": [
+    {"drug":"Calcium supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of arrhythmia"}
+  ],
+  "Prednisone": [
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased risk of GI ulcer"},
+    {"drug":"Warfarin","severity":"minor","case":"May affect INR"},
+    {"drug":"Diabetic drugs","severity":"moderate","case":"May raise blood glucose"}
+  ],
+  "Hydrocortisone": [
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased GI risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Diabetic drugs","severity":"moderate","case":"May increase glucose"}
+  ],
+  "Alprazolam": [
+    {"drug":"Cimetidine","severity":"moderate","case":"May increase alprazolam levels"},
+    {"drug":"Omeprazole","severity":"minor","case":"Slight increase in serum levels"},
+    {"drug":"Alcohol","severity":"major","case":"Excessive sedation risk"}
+  ],
+  "Diazepam": [
+    {"drug":"Cimetidine","severity":"moderate","case":"May increase serum levels"},
+    {"drug":"Fluoxetine","severity":"minor","case":"Monitor sedation"},
+    {"drug":"Alcohol","severity":"major","case":"High sedation risk"}
+  ],
+  "Lorazepam": [
+    {"drug":"Cimetidine","severity":"moderate","case":"May increase serum levels"},
+    {"drug":"Alcohol","severity":"major","case":"Excessive sedation risk"},
+    {"drug":"Fluoxetine","severity":"minor","case":"Monitor sedation"}
+  ],
+  "Zolpidem": [
+    {"drug":"Alcohol","severity":"major","case":"Severe sedation risk"},
+    {"drug":"Cimetidine","severity":"minor","case":"May slightly increase levels"},
+    {"drug":"Fluvoxamine","severity":"moderate","case":"Monitor for increased sedation"}
+  ],
+  "Furosemide": [
+    {"drug":"Digoxin","severity":"major","case":"Increased digoxin toxicity"},
+    {"drug":"Lithium","severity":"moderate","case":"May raise lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"Reduced diuretic effect"}
+  ],
+  "Spironolactone": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"High hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce diuretic effect"}
+  ],
+  "Hydrochlorothiazide": [
+    {"drug":"Digoxin","severity":"major","case":"Risk of digoxin toxicity"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce effect"}
+  ],
+  "Levothyroxine": [
+    {"drug":"Calcium supplements","severity":"moderate","case":"May reduce absorption"},
+    {"drug":"Iron supplements","severity":"moderate","case":"Separate dosing by 4 hours"},
+    {"drug":"Warfarin","severity":"minor","case":"May increase anticoagulant effect"}
+  ],
+  "Metformin": [
+    {"drug":"Cimetidine","severity":"minor","case":"May increase metformin levels"},
+    {"drug":"Furosemide","severity":"minor","case":"May reduce efficacy"},
+    {"drug":"Glipizide","severity":"moderate","case":"Risk of hypoglycemia"}
+  ],
+  "Glipizide": [
+    {"drug":"Metformin","severity":"moderate","case":"Risk of hypoglycemia"},
+    {"drug":"Aspirin","severity":"moderate","case":"May increase hypoglycemia risk"},
+    {"drug":"Warfarin","severity":"minor","case":"May affect glucose control"}
+  ],
+  "Insulin": [
+    {"drug":"Glipizide","severity":"major","case":"High risk of hypoglycemia"},
+    {"drug":"Metformin","severity":"moderate","case":"Monitor blood sugar"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"}
+  ],
+  "Prednisone": [
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased GI ulcer risk"},
+    {"drug":"Warfarin","severity":"minor","case":"May affect INR"},
+    {"drug":"Diabetic drugs","severity":"moderate","case":"May raise blood glucose"}
+  ],
+  "Hydrocortisone": [
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased GI risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Diabetic drugs","severity":"moderate","case":"May increase glucose"}
+  ],
+  "Omeprazole": [
+    {"drug":"Clopidogrel","severity":"moderate","case":"May reduce effectiveness"},
+    {"drug":"Methotrexate","severity":"major","case":"Increased toxicity risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Pantoprazole": [
+    {"drug":"Clopidogrel","severity":"moderate","case":"May reduce efficacy"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Methotrexate","severity":"major","case":"Increased toxicity risk"}
+  ],
+  "Albuterol": [
+    {"drug":"Beta blockers","severity":"moderate","case":"May reduce bronchodilator effect"},
+    {"drug":"Diuretics","severity":"minor","case":"Monitor potassium levels"},
+    {"drug":"Theophylline","severity":"minor","case":"No significant interaction"}
+  ],
+  "Salmeterol": [
+    {"drug":"Beta blockers","severity":"moderate","case":"May reduce effectiveness"},
+    {"drug":"Theophylline","severity":"minor","case":"Monitor for toxicity"},
+    {"drug":"Diuretics","severity":"minor","case":"Monitor potassium"}
+  ],
+  "Theophylline": [
+    {"drug":"Cimetidine","severity":"major","case":"May increase serum levels"},
+    {"drug":"Erythromycin","severity":"moderate","case":"May increase toxicity"},
+    {"drug":"Albuterol","severity":"minor","case":"No significant interaction"}
+  ],
+  "Erythromycin": [
+    {"drug":"Theophylline","severity":"moderate","case":"May increase toxicity"},
+    {"drug":"Simvastatin","severity":"major","case":"High myopathy risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Clarithromycin": [
+    {"drug":"Statins","severity":"major","case":"Risk of myopathy"},
+    {"drug":"Theophylline","severity":"moderate","case":"May increase serum levels"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Amoxicillin": [
+    {"drug":"Methotrexate","severity":"moderate","case":"May increase toxicity"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Allopurinol","severity":"minor","case":"May increase rash risk"}
+  ],
+  "Clavulanate": [
+    {"drug":"Amoxicillin","severity":"minor","case":"Usually combined, monitor side effects"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Allopurinol","severity":"minor","case":"May increase rash risk"}
+  ],
+  "Ceftriaxone": [
+    {"drug":"Calcium-containing IV","severity":"major","case":"Risk of precipitate formation"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Loop diuretics","severity":"minor","case":"No major interaction"}
+  ],
+  "Cefuroxime": [
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Probenecid","severity":"moderate","case":"May increase cefuroxime levels"},
+    {"drug":"Metformin","severity":"minor","case":"No significant interaction"}
+  ],
+  "Ciprofloxacin": [
+    {"drug":"Calcium supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of arrhythmia"}
+  ],
+  "Levofloxacin": [
+    {"drug":"Calcium supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of arrhythmia"}
+  ],
+  "Azithromycin": [
+    {"drug":"Simvastatin","severity":"moderate","case":"May increase myopathy risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of arrhythmia"}
+  ],
+  "Doxycycline": [
+    {"drug":"Calcium supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Iron supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Metronidazole": [
+    {"drug":"Warfarin","severity":"major","case":"May increase INR"},
+    {"drug":"Alcohol","severity":"major","case":"Disulfiram-like reaction"},
+    {"drug":"Lithium","severity":"minor","case":"No major interaction"}
+  ],
+  "Tinidazole": [
+    {"drug":"Alcohol","severity":"major","case":"Disulfiram-like reaction"},
+    {"drug":"Warfarin","severity":"major","case":"May increase INR"},
+    {"drug":"Lithium","severity":"minor","case":"No major interaction"}
+  ],
+  "Cefixime": [
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Probenecid","severity":"moderate","case":"May increase cefixime levels"},
+    {"drug":"Calcium supplements","severity":"minor","case":"Separate dosing recommended"}
+  ],
+  "Gentamicin": [
+    {"drug":"Loop diuretics","severity":"major","case":"Increased ototoxicity risk"},
+    {"drug":"Vancomycin","severity":"major","case":"Additive nephrotoxicity"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May increase renal toxicity"}
+  ],
+  "Vancomycin": [
+    {"drug":"Gentamicin","severity":"major","case":"Additive nephrotoxicity"},
+    {"drug":"Loop diuretics","severity":"major","case":"Nephrotoxicity risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Monitor renal function"}
+  ],
+  "Acyclovir": [
+    {"drug":"Probenecid","severity":"moderate","case":"May increase acyclovir levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"Monitor renal function"},
+    {"drug":"Valacyclovir","severity":"minor","case":"Usually safe"}
+  ],
+  "Valacyclovir": [
+    {"drug":"Acyclovir","severity":"minor","case":"Usually safe"},
+    {"drug":"Probenecid","severity":"moderate","case":"May increase valacyclovir levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"Monitor renal function"}
+  ],
+  "Oseltamivir": [
+    {"drug":"Live vaccines","severity":"moderate","case":"May reduce vaccine response"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Antacids","severity":"minor","case":"Separate dosing recommended"}
+  ],
+  "Tamiflu": [
+    {"drug":"Live vaccines","severity":"moderate","case":"May reduce vaccine response"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Antacids","severity":"minor","case":"Separate dosing recommended"}
+  ],
+  "Prednisolone": [
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased GI risk"},
+    {"drug":"Warfarin","severity":"minor","case":"May affect INR"},
+    {"drug":"Diabetic drugs","severity":"moderate","case":"May raise blood glucose"}
+  ],
+  "Methylprednisolone": [
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased GI risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Diabetic drugs","severity":"moderate","case":"May raise blood glucose"}
+  ],
+  "Hydrocortisone": [
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased GI risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Diabetic drugs","severity":"moderate","case":"May increase glucose"}
+  ],
+  "Allopurinol": [
+    {"drug":"Azathioprine","severity":"major","case":"Increased risk of bone marrow suppression"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Ampicillin","severity":"minor","case":"May increase rash risk"}
+  ],
+  "Azathioprine": [
+    {"drug":"Allopurinol","severity":"major","case":"High bone marrow suppression risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"May increase toxicity"}
+  ],
+  "Methotrexate": [
+    {"drug":"NSAIDs","severity":"moderate","case":"May increase toxicity"},
+    {"drug":"Omeprazole","severity":"major","case":"Increased serum levels"},
+    {"drug":"Folic acid","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Folic acid": [
+    {"drug":"Methotrexate","severity":"minor","case":"May reduce efficacy"},
+    {"drug":"Phenytoin","severity":"moderate","case":"May alter folate levels"},
+    {"drug":"Sulfasalazine","severity":"minor","case":"May reduce absorption"}
+  ],
+  "Phenytoin": [
+    {"drug":"Folic acid","severity":"moderate","case":"May alter serum folate"},
+    {"drug":"Warfarin","severity":"major","case":"May reduce anticoagulant effect"},
+    {"drug":"Cimetidine","severity":"minor","case":"May increase serum levels"}
+  ],
+  "Carbamazepine": [
+    {"drug":"Warfarin","severity":"major","case":"May reduce anticoagulant effect"},
+    {"drug":"Cimetidine","severity":"moderate","case":"May increase carbamazepine levels"},
+    {"drug":"Phenytoin","severity":"minor","case":"Monitor levels"}
+  ],
+  "Valproate": [
+    {"drug":"Lamotrigine","severity":"major","case":"May increase risk of toxicity"},
+    {"drug":"Warfarin","severity":"moderate","case":"May affect INR"},
+    {"drug":"Phenytoin","severity":"minor","case":"Monitor levels"}
+  ],
+  "Lamotrigine": [
+    {"drug":"Valproate","severity":"major","case":"Increased toxicity risk"},
+    {"drug":"Carbamazepine","severity":"minor","case":"May reduce levels"},
+    {"drug":"Phenytoin","severity":"moderate","case":"May reduce levels"}
+  ],
+  "Levetiracetam": [
+    {"drug":"Valproate","severity":"minor","case":"No significant interaction"},
+    {"drug":"Carbamazepine","severity":"minor","case":"Monitor efficacy"},
+    {"drug":"Phenytoin","severity":"minor","case":"Monitor efficacy"}
+  ],
+  "Topiramate": [
+    {"drug":"Phenytoin","severity":"moderate","case":"May reduce levels"},
+    {"drug":"Valproate","severity":"minor","case":"No major interaction"},
+    {"drug":"Carbamazepine","severity":"minor","case":"Monitor efficacy"}
+  ],
+  "Gabapentin": [
+    {"drug":"Antacids","severity":"minor","case":"Separate dosing recommended"},
+    {"drug":"Morphine","severity":"moderate","case":"May increase sedation"},
+    {"drug":"Alcohol","severity":"major","case":"High sedation risk"}
+  ],
+  "Pregabalin": [
+    {"drug":"Alcohol","severity":"major","case":"Increased sedation risk"},
+    {"drug":"Morphine","severity":"moderate","case":"May increase CNS depression"},
+    {"drug":"Gabapentin","severity":"minor","case":"Additive CNS effects"}
+  ],
+  "Morphine": [
+    {"drug":"Pregabalin","severity":"moderate","case":"May increase CNS depression"},
+    {"drug":"Gabapentin","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Benzodiazepines","severity":"major","case":"High respiratory depression risk"}
+  ],
+  "Codeine": [
+    {"drug":"Alcohol","severity":"major","case":"High sedation risk"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression risk"},
+    {"drug":"Paracetamol","severity":"minor","case":"Usually safe combination"}
+  ],
+  "Tramadol": [
+    {"drug":"SSRIs","severity":"major","case":"Risk of serotonin syndrome"},
+    {"drug":"Alcohol","severity":"major","case":"Increased sedation"},
+    {"drug":"Benzodiazepines","severity":"major","case":"High sedation risk"}
+  ],
+  "Oxycodone": [
+    {"drug":"Alcohol","severity":"major","case":"Excessive sedation risk"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression"},
+    {"drug":"Gabapentin","severity":"moderate","case":"Additive CNS depression"}
+  ],
+  "Hydrocodone": [
+    {"drug":"Alcohol","severity":"major","case":"Excessive sedation"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression"},
+    {"drug":"Gabapentin","severity":"moderate","case":"Additive CNS depression"}
+  ],
+  "Methadone": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"Alcohol","severity":"major","case":"Excessive sedation"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression"}
+  ]
+}
