@@ -23,5 +23,19 @@ app.get("/check", (req, res) => {
   if (found) res.json(found);
   else res.json({ severity: "Unknown", message: "Consult doctor" });
 });
+app.get("/ai", (req, res) => {
+  let msg = req.query.msg.toLowerCase();
+
+  let reply = "Sorry, I don't understand.";
+
+  if (msg.includes("aspirin")) {
+    reply = "Aspirin is a blood thinner. Avoid with warfarin.";
+  } 
+  else if (msg.includes("paracetamol")) {
+    reply = "Paracetamol is generally safe in normal doses.";
+  }
+
+  res.json({ reply });
+});
 
 app.listen(3000);
