@@ -2163,5 +2163,105 @@
     {"drug":"Digoxin","severity":"moderate","case":"Arrhythmia risk"},
     {"drug":"Calcium supplements","severity":"moderate","case":"Hypercalcemia risk"},
     {"drug":"Thiazide diuretics","severity":"moderate","case":"Hypercalcemia risk"}
+  ],
+  "Filgrastim": [
+    {"drug":"Chemotherapy agents","severity":"moderate","case":"Enhanced neutrophil recovery"},
+    {"drug":"Lithium","severity":"moderate","case":"Increased leukocyte production"},
+    {"drug":"Corticosteroids","severity":"minor","case":"Additive hematologic effects"}
+  ],
+  "Pegfilgrastim": [
+    {"drug":"Chemotherapy agents","severity":"moderate","case":"Enhanced neutrophil recovery"},
+    {"drug":"Lithium","severity":"moderate","case":"Increased leukocyte production"},
+    {"drug":"Corticosteroids","severity":"minor","case":"Additive effects"}
+  ],
+  "Epoetin alfa": [
+    {"drug":"Iron supplements","severity":"moderate","case":"Improved erythropoiesis"},
+    {"drug":"Antihypertensives","severity":"moderate","case":"May increase BP"},
+    {"drug":"Cyclosporine","severity":"minor","case":"Altered levels"}
+  ],
+  "Darbepoetin alfa": [
+    {"drug":"Iron supplements","severity":"moderate","case":"Improved erythropoiesis"},
+    {"drug":"Antihypertensives","severity":"moderate","case":"May increase BP"},
+    {"drug":"ACE inhibitors","severity":"minor","case":"Reduced response"}
+  ],
+  "Heparin": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Bleeding risk"},
+    {"drug":"Aspirin","severity":"major","case":"Additive anticoagulant effect"}
+  ],
+  "Enoxaparin": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Bleeding risk"},
+    {"drug":"Aspirin","severity":"major","case":"Additive anticoagulant effect"}
+  ],
+  "Dabigatran": [
+    {"drug":"P-gp inhibitors","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Bleeding risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Rivaroxaban": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Bleeding risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced levels"}
+  ],
+  "Apixaban": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Bleeding risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Edoxaban": [
+    {"drug":"P-gp inhibitors","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Bleeding risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Clopidogrel": [
+    {"drug":"Proton pump inhibitors","severity":"moderate","case":"Reduced antiplatelet effect"},
+    {"drug":"Aspirin","severity":"moderate","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"major","case":"Bleeding risk"}
+  ],
+  "Prasugrel": [
+    {"drug":"NSAIDs","severity":"major","case":"Bleeding risk"},
+    {"drug":"Warfarin","severity":"major","case":"Bleeding risk"},
+    {"drug":"Aspirin","severity":"moderate","case":"Additive effect"}
+  ],
+  "Ticagrelor": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased levels"},
+    {"drug":"NSAIDs","severity":"major","case":"Bleeding risk"},
+    {"drug":"Aspirin","severity":"moderate","case":"Reduced efficacy at high doses"}
+  ],
+  "Abciximab": [
+    {"drug":"Heparin","severity":"major","case":"Severe bleeding risk"},
+    {"drug":"Aspirin","severity":"major","case":"Bleeding risk"},
+    {"drug":"Warfarin","severity":"major","case":"Bleeding risk"}
+  ],
+  "Alteplase": [
+    {"drug":"Heparin","severity":"major","case":"Severe bleeding risk"},
+    {"drug":"Aspirin","severity":"major","case":"Bleeding risk"},
+    {"drug":"Warfarin","severity":"major","case":"Bleeding risk"}
+  ],
+  "Tenecteplase": [
+    {"drug":"Heparin","severity":"major","case":"Bleeding risk"},
+    {"drug":"Aspirin","severity":"major","case":"Bleeding risk"},
+    {"drug":"Warfarin","severity":"major","case":"Bleeding risk"}
+  ],
+  "Tranexamic acid": [
+    {"drug":"Oral contraceptives","severity":"major","case":"Thrombosis risk"},
+    {"drug":"Thrombolytics","severity":"major","case":"Reduced fibrinolysis"},
+    {"drug":"Warfarin","severity":"moderate","case":"Opposing effects"}
+  ],
+  "Desmopressin": [
+    {"drug":"NSAIDs","severity":"moderate","case":"Water retention risk"},
+    {"drug":"Carbamazepine","severity":"moderate","case":"Enhanced antidiuretic effect"},
+    {"drug":"SSRIs","severity":"moderate","case":"Hyponatremia risk"}
+  ],
+  "Vitamin K": [
+    {"drug":"Warfarin","severity":"major","case":"Reverses anticoagulant effect"},
+    {"drug":"Antibiotics","severity":"moderate","case":"Altered vitamin K levels"},
+    {"drug":"Heparin","severity":"minor","case":"No direct interaction"}
+  ],
+  "Protamine sulfate": [
+    {"drug":"Heparin","severity":"major","case":"Reverses anticoagulant effect"},
+    {"drug":"Insulin","severity":"minor","case":"Possible hypersensitivity"},
+    {"drug":"Warfarin","severity":"minor","case":"No direct reversal"}
   ]
 }
