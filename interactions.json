@@ -1963,5 +1963,105 @@
     {"drug":"Azathioprine","severity":"major","case":"Severe toxicity risk"},
     {"drug":"Theophylline","severity":"moderate","case":"Increased levels"},
     {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Isoniazid": [
+    {"drug":"Rifampin","severity":"moderate","case":"Increased hepatotoxicity risk"},
+    {"drug":"Phenytoin","severity":"major","case":"Increased phenytoin levels"},
+    {"drug":"Alcohol","severity":"major","case":"Severe hepatotoxicity risk"}
+  ],
+  "Ethambutol": [
+    {"drug":"Antacids","severity":"moderate","case":"Reduced absorption"},
+    {"drug":"Isoniazid","severity":"minor","case":"Additive therapeutic effect"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased toxicity risk"}
+  ],
+  "Pyrazinamide": [
+    {"drug":"Rifampin","severity":"moderate","case":"Increased hepatotoxicity risk"},
+    {"drug":"Allopurinol","severity":"moderate","case":"Reduced uric acid control"},
+    {"drug":"Alcohol","severity":"major","case":"Hepatotoxicity risk"}
+  ],
+  "Streptomycin": [
+    {"drug":"Loop diuretics","severity":"major","case":"Ototoxicity risk"},
+    {"drug":"Vancomycin","severity":"major","case":"Nephrotoxicity risk"},
+    {"drug":"Neuromuscular blockers","severity":"moderate","case":"Enhanced blockade"}
+  ],
+  "Acyclovir": [
+    {"drug":"Probenecid","severity":"moderate","case":"Increased acyclovir levels"},
+    {"drug":"Nephrotoxic drugs","severity":"moderate","case":"Renal toxicity risk"},
+    {"drug":"Zidovudine","severity":"minor","case":"Increased CNS effects"}
+  ],
+  "Valacyclovir": [
+    {"drug":"Probenecid","severity":"moderate","case":"Increased levels"},
+    {"drug":"Nephrotoxic drugs","severity":"moderate","case":"Renal toxicity risk"},
+    {"drug":"Cimetidine","severity":"minor","case":"Increased levels"}
+  ],
+  "Ganciclovir": [
+    {"drug":"Zidovudine","severity":"major","case":"Bone marrow suppression"},
+    {"drug":"Imipenem","severity":"moderate","case":"Seizure risk"},
+    {"drug":"Probenecid","severity":"moderate","case":"Increased levels"}
+  ],
+  "Oseltamivir": [
+    {"drug":"Probenecid","severity":"moderate","case":"Increased oseltamivir levels"},
+    {"drug":"Live vaccines","severity":"moderate","case":"Reduced vaccine efficacy"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Zidovudine": [
+    {"drug":"Ganciclovir","severity":"major","case":"Bone marrow suppression"},
+    {"drug":"Ribavirin","severity":"moderate","case":"Reduced efficacy"},
+    {"drug":"Phenytoin","severity":"moderate","case":"Altered levels"}
+  ],
+  "Lamivudine": [
+    {"drug":"Trimethoprim","severity":"moderate","case":"Increased lamivudine levels"},
+    {"drug":"Zidovudine","severity":"minor","case":"Additive antiviral effect"},
+    {"drug":"Emtricitabine","severity":"minor","case":"Duplicate therapy"}
+  ],
+  "Tenofovir": [
+    {"drug":"Nephrotoxic drugs","severity":"major","case":"Renal toxicity risk"},
+    {"drug":"Didanosine","severity":"major","case":"Increased didanosine levels"},
+    {"drug":"Atazanavir","severity":"moderate","case":"Reduced atazanavir levels"}
+  ],
+  "Efavirenz": [
+    {"drug":"Protease inhibitors","severity":"moderate","case":"Altered drug levels"},
+    {"drug":"Oral contraceptives","severity":"moderate","case":"Reduced efficacy"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced efavirenz levels"}
+  ],
+  "Nevirapine": [
+    {"drug":"Oral contraceptives","severity":"moderate","case":"Reduced efficacy"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced levels"},
+    {"drug":"Ketoconazole","severity":"moderate","case":"Reduced ketoconazole levels"}
+  ],
+  "Atazanavir": [
+    {"drug":"Proton pump inhibitors","severity":"major","case":"Reduced absorption"},
+    {"drug":"Tenofovir","severity":"moderate","case":"Reduced atazanavir levels"},
+    {"drug":"Rifampin","severity":"major","case":"Reduced efficacy"}
+  ],
+  "Lopinavir": [
+    {"drug":"Rifampin","severity":"major","case":"Reduced antiviral effect"},
+    {"drug":"Statins","severity":"moderate","case":"Increased statin levels"},
+    {"drug":"Warfarin","severity":"moderate","case":"Altered INR"}
+  ],
+  "Ritonavir": [
+    {"drug":"Statins","severity":"major","case":"Increased statin toxicity"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Increased sedation"},
+    {"drug":"Warfarin","severity":"moderate","case":"Altered INR"}
+  ],
+  "Chloroquine": [
+    {"drug":"Antacids","severity":"moderate","case":"Reduced absorption"},
+    {"drug":"Digoxin","severity":"moderate","case":"Increased digoxin levels"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"}
+  ],
+  "Hydroxychloroquine": [
+    {"drug":"Digoxin","severity":"moderate","case":"Increased digoxin levels"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"Antidiabetics","severity":"moderate","case":"Hypoglycemia risk"}
+  ],
+  "Artemether": [
+    {"drug":"Rifampin","severity":"major","case":"Reduced efficacy"},
+    {"drug":"QT-prolonging drugs","severity":"moderate","case":"Arrhythmia risk"},
+    {"drug":"Antiretrovirals","severity":"moderate","case":"Altered levels"}
+  ],
+  "Lumefantrine": [
+    {"drug":"Rifampin","severity":"major","case":"Reduced efficacy"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased levels"}
   ]
 }
