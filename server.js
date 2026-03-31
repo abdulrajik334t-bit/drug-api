@@ -59,15 +59,15 @@ app.get("/check", (req, res) => {
 app.get("/ai", async (req, res) => {
   let msg = req.query.msg.toLowerCase();
 
-  let reply = "Ask about drugs, food or interactions.";
-
   let drugs = Object.keys(data);
-
   let foundDrugs = drugs.filter(d =>
     msg.includes(d.toLowerCase())
   );
 
-  // 🔥 1. Local drug interaction (FAST + ACCURATE)
+  let localReply = "";
+  let reply = "";
+
+  // 🔥 Local interaction
   if (foundDrugs.length >= 2) {
     let d1 = foundDrugs[0];
     let d2 = foundDrugs[1];
@@ -77,16 +77,50 @@ app.get("/ai", async (req, res) => {
     let found = interactions?.find(
       x => x.drug.toLowerCase() === d2.toLowerCase()
     );
- let localReply = "";
 
-if (found) {
-  localReply = `⚠️ ${d1} + ${d2}: ${found.case} (Severity: ${found.severity})`;
-} else {
-  localReply = `✅ No major interaction between ${d1} and ${d2}`;
-}
+    if (found) {
+      localReply = `⚠️ ${d1} + ${d2}: ${found.case} (Severity: ${found.severity})`;
+    } else {
+      localReply = `✅ No major interaction between ${d1} and ${d2}`;
+    }
   }
 
-  // 🍎 Food interaction
+  try {
+    let response = await axios.post(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        model: "mistralai/mistral-7b-instruct",
+        messages: [
+          {
+            role: "system",
+            content: "You are a professional medical AI. Explain drug interactions, risks, food interactions, and precautions clearly."
+          },
+          {
+            role: "user",
+            content: msg
+          }
+        ]
+      },
+      {
+        headers: {
+          "Authorization": "Bearer YOUR_API_KEY",
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    let aiReply = response.data.choices[0].message.content;
+
+    reply = localReply + "\n\n🤖 AI Explanation:\n" + aiReply;
+
+  } catch (err) {
+    reply = localReply || "AI not available";
+  }
+
+  res.json({ reply });
+});
+  
+ // 🍎 Food interaction
   if (msg.includes("food") || msg.includes("diet")) {
     reply = "Some foods like grapefruit and alcohol can interact with medicines.";
     return res.json({ reply });
