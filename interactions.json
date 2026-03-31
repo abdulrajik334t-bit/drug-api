@@ -674,4 +674,99 @@
     {"drug":"Sulfonylureas","severity":"moderate","case":"May cause low blood sugar"},
     {"drug":"Warfarin","severity":"minor","case":"Monitor INR if needed"}
   ]
+  "Losartan": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Valsartan": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Candesartan": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Irbesartan": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Telmisartan": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Olmesartan": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Hydralazine": [
+    {"drug":"Beta blockers","severity":"minor","case":"May reduce antihypertensive effect"},
+    {"drug":"Diuretics","severity":"minor","case":"Monitor blood pressure"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce effect"}
+  ],
+  "Minoxidil": [
+    {"drug":"Beta blockers","severity":"minor","case":"Monitor for reflex tachycardia"},
+    {"drug":"Diuretics","severity":"moderate","case":"Fluid retention possible"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Clonidine": [
+    {"drug":"Beta blockers","severity":"minor","case":"May enhance bradycardia risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
+    {"drug":"TCAs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Methyldopa": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Hypertensive crisis risk"},
+    {"drug":"Iron supplements","severity":"minor","case":"Separate dosing recommended"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Propranolol": [
+    {"drug":"Verapamil","severity":"major","case":"Risk of bradycardia and AV block"},
+    {"drug":"Clonidine","severity":"moderate","case":"May increase bradycardia risk"},
+    {"drug":"Insulin","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Metoprolol": [
+    {"drug":"Verapamil","severity":"major","case":"Risk of bradycardia and AV block"},
+    {"drug":"Clonidine","severity":"moderate","case":"May increase bradycardia risk"},
+    {"drug":"Insulin","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Atenolol": [
+    {"drug":"Verapamil","severity":"major","case":"Risk of bradycardia and AV block"},
+    {"drug":"Clonidine","severity":"moderate","case":"May increase bradycardia risk"},
+    {"drug":"Insulin","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Carvedilol": [
+    {"drug":"Verapamil","severity":"major","case":"Risk of bradycardia and AV block"},
+    {"drug":"Clonidine","severity":"moderate","case":"May increase bradycardia risk"},
+    {"drug":"Insulin","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Labetalol": [
+    {"drug":"Verapamil","severity":"major","case":"Risk of bradycardia and AV block"},
+    {"drug":"Clonidine","severity":"moderate","case":"May increase bradycardia risk"},
+    {"drug":"Insulin","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Nebivolol": [
+    {"drug":"Verapamil","severity":"major","case":"Risk of bradycardia and AV block"},
+    {"drug":"Clonidine","severity":"moderate","case":"May increase bradycardia risk"},
+    {"drug":"Insulin","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Doxazosin": [
+    {"drug":"PDE5 inhibitors","severity":"major","case":"Severe hypotension risk"},
+    {"drug":"Diuretics","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"Beta blockers","severity":"minor","case":"Monitor blood pressure"}
+  ],
+  "Prazosin": [
+    {"drug":"PDE5 inhibitors","severity":"major","case":"Severe hypotension risk"},
+    {"drug":"Diuretics","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"Beta blockers","severity":"minor","case":"Monitor blood pressure"}
+  ],
+  "Terazosin": [
+    {"drug":"PDE5 inhibitors","severity":"major","case":"Severe hypotension risk"},
+    {"drug":"Diuretics","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"Beta blockers","severity":"minor","case":"Monitor blood pressure"}
+  ]
 }
