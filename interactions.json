@@ -2063,5 +2063,105 @@
     {"drug":"Rifampin","severity":"major","case":"Reduced efficacy"},
     {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
     {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased levels"}
+  ],
+  "Insulin": [
+    {"drug":"Beta blockers","severity":"moderate","case":"May mask hypoglycemia"},
+    {"drug":"Corticosteroids","severity":"moderate","case":"Reduced hypoglycemic effect"},
+    {"drug":"Alcohol","severity":"moderate","case":"Hypoglycemia risk"}
+  ],
+  "Metformin": [
+    {"drug":"Cimetidine","severity":"moderate","case":"Increased metformin levels"},
+    {"drug":"Contrast media","severity":"major","case":"Risk of lactic acidosis"},
+    {"drug":"Alcohol","severity":"major","case":"Lactic acidosis risk"}
+  ],
+  "Glibenclamide": [
+    {"drug":"Fluconazole","severity":"moderate","case":"Increased hypoglycemia risk"},
+    {"drug":"Beta blockers","severity":"moderate","case":"Mask hypoglycemia"},
+    {"drug":"Alcohol","severity":"moderate","case":"Hypoglycemia risk"}
+  ],
+  "Glimepiride": [
+    {"drug":"Fluconazole","severity":"moderate","case":"Increased hypoglycemia"},
+    {"drug":"Beta blockers","severity":"moderate","case":"Mask hypoglycemia"},
+    {"drug":"Alcohol","severity":"moderate","case":"Hypoglycemia risk"}
+  ],
+  "Pioglitazone": [
+    {"drug":"Insulin","severity":"moderate","case":"Increased edema risk"},
+    {"drug":"Oral contraceptives","severity":"moderate","case":"Reduced efficacy"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced levels"}
+  ],
+  "Rosiglitazone": [
+    {"drug":"Insulin","severity":"moderate","case":"Increased edema risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced levels"},
+    {"drug":"Gemfibrozil","severity":"major","case":"Increased levels"}
+  ],
+  "Sitagliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"Increased hypoglycemia risk"},
+    {"drug":"Digoxin","severity":"minor","case":"Increased digoxin levels"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Hypoglycemia risk"}
+  ],
+  "Vildagliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk"},
+    {"drug":"ACE inhibitors","severity":"minor","case":"Angioedema risk"},
+    {"drug":"Alcohol","severity":"minor","case":"Minimal interaction"}
+  ],
+  "Saxagliptin": [
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased levels"},
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Hypoglycemia risk"}
+  ],
+  "Empagliflozin": [
+    {"drug":"Diuretics","severity":"moderate","case":"Dehydration risk"},
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk"},
+    {"drug":"ACE inhibitors","severity":"minor","case":"Hypotension risk"}
+  ],
+  "Dapagliflozin": [
+    {"drug":"Diuretics","severity":"moderate","case":"Dehydration risk"},
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk"},
+    {"drug":"ACE inhibitors","severity":"minor","case":"Hypotension risk"}
+  ],
+  "Canagliflozin": [
+    {"drug":"Diuretics","severity":"moderate","case":"Dehydration risk"},
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"Reduced levels"}
+  ],
+  "Levothyroxine": [
+    {"drug":"Calcium supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Iron supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"moderate","case":"Increased INR"}
+  ],
+  "Carbimazole": [
+    {"drug":"Warfarin","severity":"moderate","case":"Reduced anticoagulant effect"},
+    {"drug":"Beta blockers","severity":"minor","case":"Additive effect"},
+    {"drug":"Theophylline","severity":"moderate","case":"Altered levels"}
+  ],
+  "Propylthiouracil": [
+    {"drug":"Warfarin","severity":"moderate","case":"Reduced anticoagulant effect"},
+    {"drug":"Beta blockers","severity":"minor","case":"Additive effect"},
+    {"drug":"Digoxin","severity":"minor","case":"Altered levels"}
+  ],
+  "Calcitriol": [
+    {"drug":"Thiazide diuretics","severity":"moderate","case":"Hypercalcemia risk"},
+    {"drug":"Digoxin","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"Magnesium","severity":"moderate","case":"Hypermagnesemia risk"}
+  ],
+  "Alendronate": [
+    {"drug":"Calcium supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Antacids","severity":"major","case":"Reduced absorption"},
+    {"drug":"NSAIDs","severity":"moderate","case":"GI irritation risk"}
+  ],
+  "Risedronate": [
+    {"drug":"Calcium supplements","severity":"major","case":"Reduced absorption"},
+    {"drug":"Antacids","severity":"major","case":"Reduced absorption"},
+    {"drug":"NSAIDs","severity":"moderate","case":"GI irritation risk"}
+  ],
+  "Denosumab": [
+    {"drug":"Immunosuppressants","severity":"moderate","case":"Infection risk"},
+    {"drug":"Corticosteroids","severity":"moderate","case":"Infection risk"},
+    {"drug":"Calcium","severity":"moderate","case":"Hypocalcemia risk"}
+  ],
+  "Teriparatide": [
+    {"drug":"Digoxin","severity":"moderate","case":"Arrhythmia risk"},
+    {"drug":"Calcium supplements","severity":"moderate","case":"Hypercalcemia risk"},
+    {"drug":"Thiazide diuretics","severity":"moderate","case":"Hypercalcemia risk"}
   ]
 }
