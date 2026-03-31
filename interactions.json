@@ -1258,5 +1258,135 @@
     {"drug":"Antacids","severity":"minor","case":"May reduce absorption"},
     {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
     {"drug":"Isotretinoin","severity":"minor","case":"Increased intracranial pressure risk"}
+  ],
+  "Furosemide": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"Aminoglycosides","severity":"major","case":"Increased ototoxicity risk"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Bumetanide": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"Aminoglycosides","severity":"major","case":"Increased ototoxicity risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce diuretic effect"}
+  ],
+  "Torasemide": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce diuretic effect"},
+    {"drug":"Lithium","severity":"major","case":"Increased lithium toxicity"}
+  ],
+  "Hydrochlorothiazide": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"Lithium","severity":"major","case":"Increased lithium toxicity"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Chlorthalidone": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"Lithium","severity":"major","case":"Increased lithium toxicity"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Metolazone": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"Lithium","severity":"major","case":"Increased lithium toxicity"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Spironolactone": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce diuretic effect"}
+  ],
+  "Eplerenone": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"May increase drug levels"}
+  ],
+  "Amiloride": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce diuretic effect"}
+  ],
+  "Triamterene": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce diuretic effect"}
+  ],
+  "Hydralazine": [
+    {"drug":"MAO inhibitors","severity":"moderate","case":"Additive hypotension risk"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask tachycardia"},
+    {"drug":"Diuretics","severity":"moderate","case":"Additive hypotensive effect"}
+  ],
+  "Minoxidil": [
+    {"drug":"Beta blockers","severity":"moderate","case":"May mask tachycardia"},
+    {"drug":"Diuretics","severity":"moderate","case":"Additive hypotensive effect"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce antihypertensive effect"}
+  ],
+  "Clonidine": [
+    {"drug":"Beta blockers","severity":"major","case":"Additive bradycardia risk"},
+    {"drug":"Tricyclic antidepressants","severity":"moderate","case":"May reduce antihypertensive effect"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"}
+  ],
+  "Methyldopa": [
+    {"drug":"MAO inhibitors","severity":"moderate","case":"Additive hypotension risk"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Iron supplements","severity":"minor","case":"May reduce absorption"}
+  ],
+  "Reserpine": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Severe hypertensive risk"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Beta blockers","severity":"moderate","case":"Additive bradycardia"}
+  ],
+  "Propranolol": [
+    {"drug":"Calcium channel blockers","severity":"major","case":"Severe bradycardia risk"},
+    {"drug":"Insulin","severity":"moderate","case":"May mask hypoglycemia"},
+    {"drug":"Digoxin","severity":"moderate","case":"Additive bradycardia"}
+  ],
+  "Atenolol": [
+    {"drug":"Calcium channel blockers","severity":"major","case":"Severe bradycardia risk"},
+    {"drug":"Insulin","severity":"moderate","case":"May mask hypoglycemia"},
+    {"drug":"Digoxin","severity":"moderate","case":"Additive bradycardia"}
+  ],
+  "Metoprolol": [
+    {"drug":"Calcium channel blockers","severity":"major","case":"Severe bradycardia risk"},
+    {"drug":"Insulin","severity":"moderate","case":"May mask hypoglycemia"},
+    {"drug":"Digoxin","severity":"moderate","case":"Additive bradycardia"}
+  ],
+  "Carvedilol": [
+    {"drug":"Calcium channel blockers","severity":"major","case":"Severe bradycardia risk"},
+    {"drug":"Insulin","severity":"moderate","case":"May mask hypoglycemia"},
+    {"drug":"Digoxin","severity":"moderate","case":"Additive bradycardia"}
+  ],
+  "Nebivolol": [
+    {"drug":"Calcium channel blockers","severity":"major","case":"Severe bradycardia risk"},
+    {"drug":"Insulin","severity":"moderate","case":"May mask hypoglycemia"},
+    {"drug":"Digoxin","severity":"moderate","case":"Additive bradycardia"}
+  ],
+  "Labetalol": [
+    {"drug":"Calcium channel blockers","severity":"major","case":"Severe bradycardia risk"},
+    {"drug":"Insulin","severity":"moderate","case":"May mask hypoglycemia"},
+    {"drug":"Digoxin","severity":"moderate","case":"Additive bradycardia"}
+  ],
+  "Doxazosin": [
+    {"drug":"Other antihypertensives","severity":"moderate","case":"Additive hypotension"},
+    {"drug":"Phosphodiesterase inhibitors","severity":"major","case":"Severe hypotension risk"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce antihypertensive effect"}
+  ],
+  "Prazosin": [
+    {"drug":"Other antihypertensives","severity":"moderate","case":"Additive hypotension"},
+    {"drug":"Phosphodiesterase inhibitors","severity":"major","case":"Severe hypotension risk"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce antihypertensive effect"}
+  ],
+  "Terazosin": [
+    {"drug":"Other antihypertensives","severity":"moderate","case":"Additive hypotension"},
+    {"drug":"Phosphodiesterase inhibitors","severity":"major","case":"Severe hypotension risk"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce antihypertensive effect"}
+  ],
+  "Tamsulosin": [
+    {"drug":"Other antihypertensives","severity":"moderate","case":"Additive hypotension"},
+    {"drug":"Phosphodiesterase inhibitors","severity":"major","case":"Severe hypotension risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"May increase drug levels"}
+  ],
+  "Alfuzosin": [
+    {"drug":"Other antihypertensives","severity":"moderate","case":"Additive hypotension"},
+    {"drug":"Phosphodiesterase inhibitors","severity":"major","case":"Severe hypotension risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"May increase drug levels"}
   ]
 }
