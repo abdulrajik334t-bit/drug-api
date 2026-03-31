@@ -484,4 +484,99 @@
     {"drug":"Alcohol","severity":"major","case":"Excessive sedation"},
     {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression"}
   ]
+  "Atorvastatin": [
+    {"drug":"Grapefruit juice","severity":"major","case":"High risk of myopathy"},
+    {"drug":"Amiodarone","severity":"minor","case":"May increase statin levels"},
+    {"drug":"Warfarin","severity":"moderate","case":"May affect INR"}
+  ],
+  "Rosuvastatin": [
+    {"drug":"Cyclosporine","severity":"major","case":"High myopathy risk"},
+    {"drug":"Gemfibrozil","severity":"moderate","case":"May increase statin levels"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Simvastatin": [
+    {"drug":"Grapefruit juice","severity":"major","case":"High risk of myopathy"},
+    {"drug":"Amiodarone","severity":"moderate","case":"May increase levels"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Pravastatin": [
+    {"drug":"Gemfibrozil","severity":"moderate","case":"May increase statin levels"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Cyclosporine","severity":"major","case":"High myopathy risk"}
+  ],
+  "Lovastatin": [
+    {"drug":"Grapefruit juice","severity":"major","case":"High myopathy risk"},
+    {"drug":"Amiodarone","severity":"moderate","case":"May increase levels"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Ezetimibe": [
+    {"drug":"Statins","severity":"minor","case":"Usually safe, monitor for side effects"},
+    {"drug":"Cyclosporine","severity":"moderate","case":"May increase levels"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Fenofibrate": [
+    {"drug":"Statins","severity":"major","case":"High myopathy risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Cyclosporine","severity":"moderate","case":"May increase levels"}
+  ],
+  "Gemfibrozil": [
+    {"drug":"Statins","severity":"major","case":"High myopathy risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Cyclosporine","severity":"moderate","case":"May increase levels"}
+  ],
+  "Niacin": [
+    {"drug":"Statins","severity":"moderate","case":"May increase risk of myopathy"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Alcohol","severity":"moderate","case":"May increase flushing and hepatotoxicity"}
+  ],
+  "Omega-3 fatty acids": [
+    {"drug":"Warfarin","severity":"moderate","case":"May increase bleeding risk"},
+    {"drug":"Aspirin","severity":"minor","case":"Additive antiplatelet effect"},
+    {"drug":"Statins","severity":"minor","case":"Usually safe combination"}
+  ],
+  "Ezetimibe/Simvastatin": [
+    {"drug":"Grapefruit juice","severity":"major","case":"Increased myopathy risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Amiodarone","severity":"moderate","case":"May increase statin levels"}
+  ],
+  "Alirocumab": [
+    {"drug":"Statins","severity":"minor","case":"Usually safe, monitor cholesterol"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Other lipid-lowering agents","severity":"minor","case":"Additive effect possible"}
+  ],
+  "Evolocumab": [
+    {"drug":"Statins","severity":"minor","case":"Usually safe, monitor cholesterol"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Other lipid-lowering agents","severity":"minor","case":"Additive effect possible"}
+  ],
+  "Bile acid sequestrants": [
+    {"drug":"Warfarin","severity":"moderate","case":"May reduce absorption, monitor INR"},
+    {"drug":"Statins","severity":"minor","case":"Separate dosing recommended"},
+    {"drug":"Thyroid hormones","severity":"moderate","case":"May reduce absorption, separate dosing"}
+  ],
+  "Colestipol": [
+    {"drug":"Warfarin","severity":"moderate","case":"May reduce absorption, monitor INR"},
+    {"drug":"Statins","severity":"minor","case":"Separate dosing recommended"},
+    {"drug":"Thyroid hormones","severity":"moderate","case":"May reduce absorption"}
+  ],
+  "Colesevelam": [
+    {"drug":"Warfarin","severity":"moderate","case":"Monitor INR, may reduce absorption"},
+    {"drug":"Statins","severity":"minor","case":"Separate dosing recommended"},
+    {"drug":"Thyroid hormones","severity":"moderate","case":"May reduce absorption"}
+  ],
+  "Niacin ER": [
+    {"drug":"Statins","severity":"moderate","case":"Increased risk of myopathy"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased flushing and hepatotoxicity"}
+  ],
+  "Furosemide": [
+    {"drug":"Digoxin","severity":"major","case":"Increased digoxin toxicity risk"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce diuretic effect"}
+  ],
+  "Bumetanide": [
+    {"drug":"Digoxin","severity":"major","case":"Increased digoxin toxicity risk"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce diuretic effect"}
+  ]
 }
