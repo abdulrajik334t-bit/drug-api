@@ -1563,5 +1563,105 @@
     {"drug":"NSAIDs","severity":"major","case":"GI bleeding risk"},
     {"drug":"Phenytoin","severity":"moderate","case":"Reduced steroid effect"},
     {"drug":"Warfarin","severity":"moderate","case":"May alter INR"}
+  ],
+  "Fluoxetine": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Risk of serotonin syndrome"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase bleeding risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased GI bleeding risk"}
+  ],
+  "Sertraline": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Risk of serotonin syndrome"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase bleeding risk"},
+    {"drug":"Tramadol","severity":"moderate","case":"Serotonin syndrome risk"}
+  ],
+  "Paroxetine": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Risk of serotonin syndrome"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase bleeding risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased CNS effects"}
+  ],
+  "Citalopram": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of arrhythmia"},
+    {"drug":"MAO inhibitors","severity":"major","case":"Serotonin syndrome risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased bleeding risk"}
+  ],
+  "Escitalopram": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Serotonin syndrome risk"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased bleeding risk"}
+  ],
+  "Venlafaxine": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Serotonin syndrome risk"},
+    {"drug":"Tramadol","severity":"moderate","case":"Serotonin syndrome risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased CNS effects"}
+  ],
+  "Duloxetine": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Serotonin syndrome risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased bleeding risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"Hepatotoxicity risk"}
+  ],
+  "Bupropion": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Hypertensive reactions"},
+    {"drug":"Alcohol","severity":"moderate","case":"Seizure risk"},
+    {"drug":"Antipsychotics","severity":"moderate","case":"Seizure threshold lowered"}
+  ],
+  "Amitriptyline": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Severe CNS toxicity"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
+    {"drug":"Anticholinergics","severity":"moderate","case":"Additive effects"}
+  ],
+  "Nortriptyline": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Severe CNS toxicity"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
+    {"drug":"Anticholinergics","severity":"moderate","case":"Additive effects"}
+  ],
+  "Imipramine": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Severe CNS toxicity"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
+    {"drug":"Anticholinergics","severity":"moderate","case":"Additive effects"}
+  ],
+  "Clomipramine": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Serotonin syndrome risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
+    {"drug":"SSRIs","severity":"moderate","case":"Serotonin syndrome risk"}
+  ],
+  "Mirtazapine": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Serotonin syndrome risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
+    {"drug":"Benzodiazepines","severity":"moderate","case":"Additive CNS depression"}
+  ],
+  "Trazodone": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Serotonin syndrome risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
+    {"drug":"Antihypertensives","severity":"moderate","case":"Additive hypotension"}
+  ],
+  "Lithium": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased lithium levels"},
+    {"drug":"ACE inhibitors","severity":"major","case":"Lithium toxicity risk"},
+    {"drug":"Diuretics","severity":"major","case":"Lithium toxicity risk"}
+  ],
+  "Valproate": [
+    {"drug":"Lamotrigine","severity":"major","case":"Increased risk of rash"},
+    {"drug":"Warfarin","severity":"moderate","case":"Increased bleeding risk"},
+    {"drug":"Aspirin","severity":"moderate","case":"Increased valproate levels"}
+  ],
+  "Carbamazepine": [
+    {"drug":"Oral contraceptives","severity":"major","case":"Reduced contraceptive efficacy"},
+    {"drug":"Warfarin","severity":"moderate","case":"Reduced anticoagulant effect"},
+    {"drug":"Grapefruit juice","severity":"moderate","case":"Increased drug levels"}
+  ],
+  "Phenytoin": [
+    {"drug":"Warfarin","severity":"moderate","case":"Altered INR"},
+    {"drug":"Oral contraceptives","severity":"major","case":"Reduced efficacy"},
+    {"drug":"Alcohol","severity":"moderate","case":"Altered drug levels"}
+  ],
+  "Lamotrigine": [
+    {"drug":"Valproate","severity":"major","case":"Increased toxicity risk"},
+    {"drug":"Carbamazepine","severity":"moderate","case":"Reduced lamotrigine levels"},
+    {"drug":"Oral contraceptives","severity":"moderate","case":"Reduced levels"}
+  ],
+  "Levetiracetam": [
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased CNS effects"},
+    {"drug":"Phenytoin","severity":"minor","case":"Minimal interaction"}
   ]
 }
