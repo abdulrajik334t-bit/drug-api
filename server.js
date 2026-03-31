@@ -58,16 +58,45 @@ app.get("/check", (req, res) => {
 app.get("/ai", (req, res) => {
   let msg = req.query.msg.toLowerCase();
 
-  let reply = "Ask about medicines or interactions.";
+  let reply = "Ask about drugs, food or interactions.";
 
-  if (msg.includes("aspirin") && msg.includes("warfarin")) {
-    reply = "⚠️ High risk: Aspirin + Warfarin can cause severe bleeding.";
+  // 🔥 Drug interaction detect
+  let drugs = Object.keys(data);
+
+  let foundDrugs = drugs.filter(d =>
+    msg.includes(d.toLowerCase())
+  );
+
+  if (foundDrugs.length >= 2) {
+    let d1 = foundDrugs[0];
+    let d2 = foundDrugs[1];
+
+    let interactions = data[d1];
+
+    let found = interactions?.find(
+      x => x.drug.toLowerCase() === d2.toLowerCase()
+    );
+
+    if (found) {
+      reply = `⚠️ ${d1} + ${d2}: ${found.case} (Severity: ${found.severity})`;
+    } else {
+      reply = `✅ No major interaction between ${d1} and ${d2}`;
+    }
   }
-  else if (msg.includes("paracetamol")) {
-    reply = "Paracetamol is safe for fever in normal dose.";
+
+  // 🍎 Food interaction
+  else if (msg.includes("food") || msg.includes("diet")) {
+    reply = "Some foods like grapefruit and alcohol can interact with medicines.";
   }
-  else if (msg.includes("interaction")) {
-    reply = "Drug interaction happens when medicines affect each other.";
+
+  // 🍺 Alcohol special
+  else if (msg.includes("alcohol")) {
+    reply = "Alcohol can increase side effects like drowsiness or liver damage.";
+  }
+
+  // 💊 Single drug info
+  else if (foundDrugs.length === 1) {
+    reply = `${foundDrugs[0]} is a commonly used medicine. Always follow doctor's advice.`;
   }
 
   res.json({ reply });
