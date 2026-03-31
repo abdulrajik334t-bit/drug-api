@@ -964,4 +964,99 @@
     {"drug":"MAO inhibitors","severity":"major","case":"Hypertensive crisis risk"},
     {"drug":"Digoxin","severity":"moderate","case":"May cause arrhythmia"}
   ]
+  "Warfarin": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Amiodarone","severity":"major","case":"May increase INR, bleeding risk"},
+    {"drug":"Metronidazole","severity":"moderate","case":"May enhance anticoagulant effect"}
+  ],
+  "Apixaban": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"May reduce apixaban levels"},
+    {"drug":"Ketoconazole","severity":"major","case":"May increase apixaban levels"}
+  ],
+  "Rivaroxaban": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"May reduce rivaroxaban levels"},
+    {"drug":"Ketoconazole","severity":"major","case":"May increase rivaroxaban levels"}
+  ],
+  "Dabigatran": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Verapamil","severity":"moderate","case":"May increase dabigatran levels"},
+    {"drug":"Rifampin","severity":"moderate","case":"May reduce efficacy"}
+  ],
+  "Heparin": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Additive anticoagulant effect"},
+    {"drug":"Digoxin","severity":"minor","case":"No major interaction"}
+  ],
+  "Enoxaparin": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Additive anticoagulant effect"},
+    {"drug":"Heparin","severity":"minor","case":"Additive effect possible"}
+  ],
+  "Fondaparinux": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Additive anticoagulant effect"},
+    {"drug":"Heparin","severity":"minor","case":"Additive effect possible"}
+  ],
+  "Clopidogrel": [
+    {"drug":"Omeprazole","severity":"major","case":"Reduced antiplatelet effect"},
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Additive bleeding risk"}
+  ],
+  "Ticagrelor": [
+    {"drug":"Aspirin","severity":"moderate","case":"Additive bleeding risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"May increase drug levels"},
+    {"drug":"CYP3A4 inducers","severity":"moderate","case":"May reduce efficacy"}
+  ],
+  "Prasugrel": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Additive bleeding risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"May increase effect"}
+  ],
+  "Aspirin": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"major","case":"Additive bleeding risk"},
+    {"drug":"Corticosteroids","severity":"moderate","case":"May increase GI bleeding risk"}
+  ],
+  "Dipyridamole": [
+    {"drug":"Warfarin","severity":"moderate","case":"Additive bleeding risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Increased bleeding risk"},
+    {"drug":"Clopidogrel","severity":"minor","case":"Additive antiplatelet effect"}
+  ],
+  "Abciximab": [
+    {"drug":"Heparin","severity":"major","case":"High bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Additive effect"}
+  ],
+  "Eptifibatide": [
+    {"drug":"Heparin","severity":"major","case":"High bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Additive effect"}
+  ],
+  "Tirofiban": [
+    {"drug":"Heparin","severity":"major","case":"High bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Additive effect"}
+  ],
+  "Vorapaxar": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Anticoagulants","severity":"major","case":"Additive bleeding risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"May increase drug levels"}
+  ],
+  "Cangrelor": [
+    {"drug":"Anticoagulants","severity":"major","case":"Additive bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Thrombolytics","severity":"major","case":"Severe bleeding risk"}
+  ],
+  "Bivalirudin": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Anticoagulants","severity":"major","case":"Additive bleeding risk"},
+    {"drug":"Thrombolytics","severity":"major","case":"Severe bleeding risk"}
+  ],
+  "Argatroban": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Anticoagulants","severity":"major","case":"Additive bleeding risk"},
+    {"drug":"Thrombolytics","severity":"major","case":"Severe bleeding risk"}
+  ]
 }
