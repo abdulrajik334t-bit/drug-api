@@ -579,4 +579,99 @@
     {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
     {"drug":"NSAIDs","severity":"minor","case":"May reduce diuretic effect"}
   ]
+  "Insulin Aspart": [
+    {"drug":"Sulfonylureas","severity":"major","case":"High risk of hypoglycemia"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"},
+    {"drug":"Metformin","severity":"moderate","case":"Monitor blood glucose"}
+  ],
+  "Insulin Glargine": [
+    {"drug":"Sulfonylureas","severity":"major","case":"High risk of hypoglycemia"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"},
+    {"drug":"Metformin","severity":"moderate","case":"Monitor blood glucose"}
+  ],
+  "Insulin Lispro": [
+    {"drug":"Sulfonylureas","severity":"major","case":"High risk of hypoglycemia"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"},
+    {"drug":"Metformin","severity":"moderate","case":"Monitor blood glucose"}
+  ],
+  "Glipizide": [
+    {"drug":"Insulin","severity":"major","case":"High risk of hypoglycemia"},
+    {"drug":"Metformin","severity":"moderate","case":"May reduce blood sugar effectively"},
+    {"drug":"Warfarin","severity":"minor","case":"May affect glucose control"}
+  ],
+  "Glyburide": [
+    {"drug":"Insulin","severity":"major","case":"High hypoglycemia risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Alcohol","severity":"moderate","case":"May enhance hypoglycemia risk"}
+  ],
+  "Metformin": [
+    {"drug":"Cimetidine","severity":"minor","case":"May increase metformin levels"},
+    {"drug":"Furosemide","severity":"minor","case":"May reduce efficacy"},
+    {"drug":"Glipizide","severity":"moderate","case":"Risk of hypoglycemia"}
+  ],
+  "Pioglitazone": [
+    {"drug":"Insulin","severity":"moderate","case":"May increase edema risk"},
+    {"drug":"Furosemide","severity":"minor","case":"Monitor fluid retention"},
+    {"drug":"Warfarin","severity":"minor","case":"May affect INR slightly"}
+  ],
+  "Rosiglitazone": [
+    {"drug":"Insulin","severity":"moderate","case":"May increase edema risk"},
+    {"drug":"Furosemide","severity":"minor","case":"Monitor fluid retention"},
+    {"drug":"Warfarin","severity":"minor","case":"May affect INR slightly"}
+  ],
+  "Sitagliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"Risk of hypoglycemia increases"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"May cause low blood sugar"},
+    {"drug":"Digoxin","severity":"minor","case":"No major interaction"}
+  ],
+  "Saxagliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"Increased hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"May cause low blood sugar"},
+    {"drug":"Digoxin","severity":"minor","case":"Monitor levels"}
+  ],
+  "Linagliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"May increase hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Low blood sugar risk"},
+    {"drug":"Digoxin","severity":"minor","case":"Monitor if necessary"}
+  ],
+  "Empagliflozin": [
+    {"drug":"Diuretics","severity":"moderate","case":"May increase dehydration risk"},
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk increases"},
+    {"drug":"Warfarin","severity":"minor","case":"No significant interaction"}
+  ],
+  "Dapagliflozin": [
+    {"drug":"Diuretics","severity":"moderate","case":"May increase dehydration risk"},
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk increases"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Canagliflozin": [
+    {"drug":"Diuretics","severity":"moderate","case":"May increase dehydration risk"},
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk increases"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Acarbose": [
+    {"drug":"Insulin","severity":"minor","case":"May enhance hypoglycemia"},
+    {"drug":"Sulfonylureas","severity":"minor","case":"Low blood sugar risk"},
+    {"drug":"Digoxin","severity":"minor","case":"Monitor absorption"}
+  ],
+  "Miglitol": [
+    {"drug":"Insulin","severity":"minor","case":"May enhance hypoglycemia"},
+    {"drug":"Sulfonylureas","severity":"minor","case":"Low blood sugar risk"},
+    {"drug":"Digoxin","severity":"minor","case":"Monitor absorption"}
+  ],
+  "Exenatide": [
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk increases"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"May cause low blood sugar"},
+    {"drug":"Warfarin","severity":"minor","case":"No significant interaction"}
+  ],
+  "Liraglutide": [
+    {"drug":"Insulin","severity":"moderate","case":"Increased hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"May lower blood sugar"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR if necessary"}
+  ],
+  "Dulaglutide": [
+    {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk increases"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"May cause low blood sugar"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR if needed"}
+  ]
 }
