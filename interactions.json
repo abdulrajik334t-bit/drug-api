@@ -1763,5 +1763,105 @@
     {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
     {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
     {"drug":"QT-prolonging drugs","severity":"moderate","case":"Arrhythmia risk"}
+  ],
+  "Morphine": [
+    {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression risk"},
+    {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"},
+    {"drug":"MAO inhibitors","severity":"moderate","case":"Enhanced opioid effects"}
+  ],
+  "Codeine": [
+    {"drug":"CYP2D6 inhibitors","severity":"major","case":"Reduced analgesic effect"},
+    {"drug":"Alcohol","severity":"major","case":"Increased sedation"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression"}
+  ],
+  "Tramadol": [
+    {"drug":"SSRIs","severity":"major","case":"Serotonin syndrome risk"},
+    {"drug":"MAO inhibitors","severity":"major","case":"Severe CNS toxicity"},
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"}
+  ],
+  "Fentanyl": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased respiratory depression"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Severe sedation"},
+    {"drug":"Alcohol","severity":"major","case":"Respiratory depression"}
+  ],
+  "Methadone": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased levels"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression"}
+  ],
+  "Buprenorphine": [
+    {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression"},
+    {"drug":"Alcohol","severity":"major","case":"Severe sedation"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased levels"}
+  ],
+  "Naloxone": [
+    {"drug":"Opioids","severity":"major","case":"Reversal of opioid effects"},
+    {"drug":"Buprenorphine","severity":"moderate","case":"Reduced reversal effect"},
+    {"drug":"Alcohol","severity":"minor","case":"No major interaction"}
+  ],
+  "Naltrexone": [
+    {"drug":"Opioids","severity":"major","case":"Blocks opioid effects"},
+    {"drug":"Disulfiram","severity":"moderate","case":"Hepatotoxicity risk"},
+    {"drug":"Thioridazine","severity":"moderate","case":"Increased sedation"}
+  ],
+  "Ibuprofen": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"Reduced antihypertensive effect"},
+    {"drug":"Diuretics","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Diclofenac": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"Reduced effect"},
+    {"drug":"Diuretics","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Naproxen": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"Reduced antihypertensive effect"},
+    {"drug":"Lithium","severity":"moderate","case":"Increased lithium levels"}
+  ],
+  "Indomethacin": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Lithium","severity":"major","case":"Increased lithium toxicity"},
+    {"drug":"Diuretics","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Ketorolac": [
+    {"drug":"Warfarin","severity":"major","case":"Severe bleeding risk"},
+    {"drug":"Other NSAIDs","severity":"major","case":"Additive toxicity"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"Reduced effect"}
+  ],
+  "Celecoxib": [
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"Reduced antihypertensive effect"},
+    {"drug":"Fluconazole","severity":"moderate","case":"Increased celecoxib levels"}
+  ],
+  "Etoricoxib": [
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"Reduced effect"},
+    {"drug":"Diuretics","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Paracetamol": [
+    {"drug":"Warfarin","severity":"moderate","case":"Increased INR with chronic use"},
+    {"drug":"Alcohol","severity":"major","case":"Hepatotoxicity risk"},
+    {"drug":"Phenytoin","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Aspirin (Low dose)": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"NSAIDs","severity":"major","case":"Additive GI toxicity"},
+    {"drug":"Corticosteroids","severity":"moderate","case":"GI bleeding risk"}
+  ],
+  "Colchicine": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased toxicity"},
+    {"drug":"Statins","severity":"moderate","case":"Myopathy risk"},
+    {"drug":"Macrolides","severity":"major","case":"Increased toxicity"}
+  ],
+  "Allopurinol": [
+    {"drug":"Azathioprine","severity":"major","case":"Severe toxicity risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"Increased INR"},
+    {"drug":"Ampicillin","severity":"moderate","case":"Increased rash risk"}
+  ],
+  "Febuxostat": [
+    {"drug":"Azathioprine","severity":"major","case":"Severe toxicity risk"},
+    {"drug":"Theophylline","severity":"moderate","case":"Increased levels"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
   ]
 }
