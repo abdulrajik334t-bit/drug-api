@@ -1663,5 +1663,105 @@
     {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
     {"drug":"Alcohol","severity":"moderate","case":"Increased CNS effects"},
     {"drug":"Phenytoin","severity":"minor","case":"Minimal interaction"}
+  ],
+  "Haloperidol": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of torsades de pointes"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Levodopa","severity":"major","case":"Reduced antiparkinson effect"}
+  ],
+  "Risperidone": [
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Antihypertensives","severity":"moderate","case":"Additive hypotension"},
+    {"drug":"Carbamazepine","severity":"moderate","case":"Reduced risperidone levels"}
+  ],
+  "Olanzapine": [
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Fluoxetine","severity":"moderate","case":"Increased olanzapine levels"},
+    {"drug":"Carbamazepine","severity":"moderate","case":"Reduced levels"}
+  ],
+  "Quetiapine": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased drug levels"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Phenytoin","severity":"moderate","case":"Reduced quetiapine levels"}
+  ],
+  "Ziprasidone": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Carbamazepine","severity":"moderate","case":"Reduced levels"}
+  ],
+  "Aripiprazole": [
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased drug levels"},
+    {"drug":"CYP3A4 inducers","severity":"moderate","case":"Reduced levels"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"}
+  ],
+  "Clozapine": [
+    {"drug":"Carbamazepine","severity":"major","case":"Risk of bone marrow suppression"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Smoking","severity":"moderate","case":"Reduced clozapine levels"}
+  ],
+  "Paliperidone": [
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Antihypertensives","severity":"moderate","case":"Additive hypotension"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"}
+  ],
+  "Lurasidone": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased drug levels"},
+    {"drug":"CYP3A4 inducers","severity":"major","case":"Reduced efficacy"},
+    {"drug":"Grapefruit juice","severity":"major","case":"Increased levels"}
+  ],
+  "Asenapine": [
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"QT-prolonging drugs","severity":"moderate","case":"Arrhythmia risk"},
+    {"drug":"Fluvoxamine","severity":"moderate","case":"Increased levels"}
+  ],
+  "Diazepam": [
+    {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"},
+    {"drug":"Opioids","severity":"major","case":"Respiratory depression risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased levels"}
+  ],
+  "Lorazepam": [
+    {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"},
+    {"drug":"Opioids","severity":"major","case":"Respiratory depression risk"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"}
+  ],
+  "Alprazolam": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased levels"},
+    {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"},
+    {"drug":"Opioids","severity":"major","case":"Respiratory depression"}
+  ],
+  "Clonazepam": [
+    {"drug":"Alcohol","severity":"major","case":"Severe sedation"},
+    {"drug":"Opioids","severity":"major","case":"Respiratory depression"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"}
+  ],
+  "Midazolam": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased sedation"},
+    {"drug":"Opioids","severity":"major","case":"Respiratory depression"},
+    {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"}
+  ],
+  "Zolpidem": [
+    {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Opioids","severity":"major","case":"Respiratory depression"}
+  ],
+  "Eszopiclone": [
+    {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased levels"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"}
+  ],
+  "Ramelteon": [
+    {"drug":"Fluvoxamine","severity":"major","case":"Increased levels"},
+    {"drug":"Alcohol","severity":"moderate","case":"Additive sedation"},
+    {"drug":"CYP1A2 inhibitors","severity":"moderate","case":"Increased levels"}
+  ],
+  "Buspirone": [
+    {"drug":"MAO inhibitors","severity":"major","case":"Hypertensive reaction risk"},
+    {"drug":"Grapefruit juice","severity":"moderate","case":"Increased levels"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"Increased levels"}
+  ],
+  "Hydroxyzine": [
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"QT-prolonging drugs","severity":"moderate","case":"Arrhythmia risk"}
   ]
 }
