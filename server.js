@@ -1,5 +1,6 @@
 const multer = require("multer");
 const Tesseract = require("tesseract.js");
+const upload = multer({ dest: "uploads/" });
 const express = require("express");
 const cors = require("cors");
 
