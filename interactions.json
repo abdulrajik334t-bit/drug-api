@@ -483,7 +483,7 @@
     {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
     {"drug":"Alcohol","severity":"major","case":"Excessive sedation"},
     {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression"}
-  ]
+  ],
   "Atorvastatin": [
     {"drug":"Grapefruit juice","severity":"major","case":"High risk of myopathy"},
     {"drug":"Amiodarone","severity":"minor","case":"May increase statin levels"},
@@ -578,7 +578,7 @@
     {"drug":"Digoxin","severity":"major","case":"Increased digoxin toxicity risk"},
     {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
     {"drug":"NSAIDs","severity":"minor","case":"May reduce diuretic effect"}
-  ]
+  ],
   "Insulin Aspart": [
     {"drug":"Sulfonylureas","severity":"major","case":"High risk of hypoglycemia"},
     {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"},
@@ -673,7 +673,7 @@
     {"drug":"Insulin","severity":"moderate","case":"Hypoglycemia risk increases"},
     {"drug":"Sulfonylureas","severity":"moderate","case":"May cause low blood sugar"},
     {"drug":"Warfarin","severity":"minor","case":"Monitor INR if needed"}
-  ]
+  ],
   "Losartan": [
     {"drug":"ACE inhibitors","severity":"major","case":"Additive hypotension risk"},
     {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
@@ -768,7 +768,7 @@
     {"drug":"PDE5 inhibitors","severity":"major","case":"Severe hypotension risk"},
     {"drug":"Diuretics","severity":"minor","case":"Additive hypotensive effect"},
     {"drug":"Beta blockers","severity":"minor","case":"Monitor blood pressure"}
-  ]
+  ],
   "Furosemide (Loop Diuretic)": [
     {"drug":"Digoxin","severity":"major","case":"Increased risk of digoxin toxicity due to hypokalemia"},
     {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
@@ -863,7 +863,7 @@
     {"drug":"Beta blockers","severity":"minor","case":"Additive hypotensive effect"},
     {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased serum levels risk"},
     {"drug":"Statins","severity":"minor","case":"Monitor for interaction"}
-  ]
+  ],
   "Captopril": [
     {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
     {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
@@ -963,7 +963,7 @@
     {"drug":"Beta blockers","severity":"major","case":"Severe hypertension risk"},
     {"drug":"MAO inhibitors","severity":"major","case":"Hypertensive crisis risk"},
     {"drug":"Digoxin","severity":"moderate","case":"May cause arrhythmia"}
-  ]
+  ],
   "Warfarin": [
     {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
     {"drug":"Amiodarone","severity":"major","case":"May increase INR, bleeding risk"},
@@ -1058,7 +1058,7 @@
     {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
     {"drug":"Anticoagulants","severity":"major","case":"Additive bleeding risk"},
     {"drug":"Thrombolytics","severity":"major","case":"Severe bleeding risk"}
-  ]
+  ],
   "Metformin": [
     {"drug":"Cimetidine","severity":"moderate","case":"May increase metformin levels"},
     {"drug":"Contrast dye","severity":"major","case":"Risk of lactic acidosis"},
@@ -1158,5 +1158,105 @@
     {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"},
     {"drug":"Alcohol","severity":"moderate","case":"May increase hypoglycemia risk"},
     {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"}
+  ],
+  "Atorvastatin": [
+    {"drug":"Grapefruit juice","severity":"major","case":"Increased risk of myopathy"},
+    {"drug":"Amiodarone","severity":"moderate","case":"May increase risk of muscle toxicity"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"}
+  ],
+  "Simvastatin": [
+    {"drug":"Grapefruit juice","severity":"major","case":"Increased risk of myopathy"},
+    {"drug":"Amiodarone","severity":"moderate","case":"May increase myopathy risk"},
+    {"drug":"Verapamil","severity":"moderate","case":"Increased plasma levels possible"}
+  ],
+  "Rosuvastatin": [
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Gemfibrozil","severity":"major","case":"Increased risk of myopathy"},
+    {"drug":"Protease inhibitors","severity":"moderate","case":"May increase statin levels"}
+  ],
+  "Pravastatin": [
+    {"drug":"Gemfibrozil","severity":"major","case":"Increased risk of myopathy"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Cyclosporine","severity":"moderate","case":"May increase drug levels"}
+  ],
+  "Lovastatin": [
+    {"drug":"Grapefruit juice","severity":"major","case":"Increased risk of myopathy"},
+    {"drug":"Verapamil","severity":"moderate","case":"May increase plasma levels"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"}
+  ],
+  "Fenofibrate": [
+    {"drug":"Statins","severity":"major","case":"Increased risk of myopathy"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase anticoagulant effect"},
+    {"drug":"Cyclosporine","severity":"moderate","case":"May increase drug levels"}
+  ],
+  "Gemfibrozil": [
+    {"drug":"Statins","severity":"major","case":"Increased risk of myopathy"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase anticoagulant effect"},
+    {"drug":"Repaglinide","severity":"major","case":"May increase hypoglycemia risk"}
+  ],
+  "Niacin": [
+    {"drug":"Statins","severity":"moderate","case":"Additive risk of myopathy"},
+    {"drug":"Alcohol","severity":"minor","case":"May increase hepatotoxicity"},
+    {"drug":"Antihypertensives","severity":"minor","case":"May enhance hypotensive effect"}
+  ],
+  "Ezetimibe": [
+    {"drug":"Fibrates","severity":"moderate","case":"Additive liver toxicity risk"},
+    {"drug":"Cyclosporine","severity":"major","case":"May increase drug levels"},
+    {"drug":"Warfarin","severity":"minor","case":"May increase INR"}
+  ],
+  "Colesevelam": [
+    {"drug":"Fat-soluble vitamins","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Thyroxine","severity":"major","case":"May reduce absorption"},
+    {"drug":"Oral contraceptives","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Warfarin (Reinforced)": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Amiodarone","severity":"major","case":"May increase INR"},
+    {"drug":"Metronidazole","severity":"moderate","case":"May enhance anticoagulant effect"}
+  ],
+  "Clarithromycin": [
+    {"drug":"Statins","severity":"major","case":"Increased risk of myopathy"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Digoxin","severity":"moderate","case":"May increase levels"}
+  ],
+  "Azithromycin": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of torsades de pointes"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Cyclosporine","severity":"minor","case":"Monitor levels"}
+  ],
+  "Erythromycin": [
+    {"drug":"Statins","severity":"major","case":"Increased myopathy risk"},
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"}
+  ],
+  "Ciprofloxacin": [
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Theophylline","severity":"moderate","case":"May increase levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May increase CNS stimulation risk"}
+  ],
+  "Levofloxacin": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of torsades de pointes"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Antacids","severity":"minor","case":"Reduce absorption"}
+  ],
+  "Moxifloxacin": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of torsades de pointes"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Antacids","severity":"minor","case":"Reduce absorption"}
+  ],
+  "Levofloxacin": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of torsades de pointes"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Antacids","severity":"minor","case":"Reduce absorption"}
+  ],
+  "Doxycycline": [
+    {"drug":"Antacids","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Retinoids","severity":"minor","case":"Increased intracranial pressure risk"}
+  ],
+  "Minocycline": [
+    {"drug":"Antacids","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Isotretinoin","severity":"minor","case":"Increased intracranial pressure risk"}
   ]
 }
