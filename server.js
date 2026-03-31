@@ -55,18 +55,18 @@ app.get("/check", (req, res) => {
 });
 
 // 🤖 AI route (same रखो)
-app.get("/ai", (req, res) => {
+app.get("/ai", async (req, res) => {
   let msg = req.query.msg.toLowerCase();
 
   let reply = "Ask about drugs, food or interactions.";
 
-  // 🔥 Drug interaction detect
   let drugs = Object.keys(data);
 
   let foundDrugs = drugs.filter(d =>
     msg.includes(d.toLowerCase())
   );
 
+  // 🔥 1. Local drug interaction (FAST + ACCURATE)
   if (foundDrugs.length >= 2) {
     let d1 = foundDrugs[0];
     let d2 = foundDrugs[1];
@@ -79,24 +79,60 @@ app.get("/ai", (req, res) => {
 
     if (found) {
       reply = `⚠️ ${d1} + ${d2}: ${found.case} (Severity: ${found.severity})`;
+      return res.json({ reply });
     } else {
       reply = `✅ No major interaction between ${d1} and ${d2}`;
+      return res.json({ reply });
     }
   }
 
   // 🍎 Food interaction
-  else if (msg.includes("food") || msg.includes("diet")) {
+  if (msg.includes("food") || msg.includes("diet")) {
     reply = "Some foods like grapefruit and alcohol can interact with medicines.";
+    return res.json({ reply });
   }
 
-  // 🍺 Alcohol special
-  else if (msg.includes("alcohol")) {
+  // 🍺 Alcohol
+  if (msg.includes("alcohol")) {
     reply = "Alcohol can increase side effects like drowsiness or liver damage.";
+    return res.json({ reply });
   }
 
   // 💊 Single drug info
-  else if (foundDrugs.length === 1) {
+  if (foundDrugs.length === 1) {
     reply = `${foundDrugs[0]} is a commonly used medicine. Always follow doctor's advice.`;
+    return res.json({ reply });
+  }
+
+  // 🤖 2. GPT fallback (जब local fail हो)
+  try {
+    let response = await axios.post(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        model: "mistralai/mistral-7b-instruct",
+        messages: [
+          {
+            role: "system",
+            content: "You are a medical assistant. Give safe and simple advice."
+          },
+          {
+            role: "user",
+            content: msg
+          }
+        ]
+      },
+      {
+        headers: {
+          "Authorization": "Bearer YOUR_OPENROUTER_KEY",
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    reply = response.data.choices[0].message.content;
+
+  } catch (err) {
+    reply = "AI not available right now.";
   }
 
   res.json({ reply });
