@@ -1463,5 +1463,105 @@
     {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of arrhythmia"},
     {"drug":"SSRIs","severity":"moderate","case":"Risk of serotonin syndrome"},
     {"drug":"Apomorphine","severity":"major","case":"Severe hypotension risk"}
+  ],
+  "Pantoprazole": [
+    {"drug":"Clopidogrel","severity":"moderate","case":"May reduce antiplatelet effect"},
+    {"drug":"Ketoconazole","severity":"moderate","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Omeprazole": [
+    {"drug":"Clopidogrel","severity":"major","case":"Reduced antiplatelet effect"},
+    {"drug":"Diazepam","severity":"moderate","case":"Increased levels"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"}
+  ],
+  "Esomeprazole": [
+    {"drug":"Clopidogrel","severity":"major","case":"Reduced antiplatelet effect"},
+    {"drug":"Diazepam","severity":"moderate","case":"Increased levels"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"}
+  ],
+  "Lansoprazole": [
+    {"drug":"Ketoconazole","severity":"moderate","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Digoxin","severity":"minor","case":"May increase levels"}
+  ],
+  "Rabeprazole": [
+    {"drug":"Ketoconazole","severity":"moderate","case":"Reduced absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Digoxin","severity":"minor","case":"May increase levels"}
+  ],
+  "Metoclopramide": [
+    {"drug":"Antipsychotics","severity":"major","case":"Increased extrapyramidal effects"},
+    {"drug":"Opioids","severity":"moderate","case":"Reduced GI motility"},
+    {"drug":"Levodopa","severity":"major","case":"Reduced antiparkinson effect"}
+  ],
+  "Domperidone": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased levels"},
+    {"drug":"Anticholinergics","severity":"moderate","case":"Reduced efficacy"}
+  ],
+  "Granisetron": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Arrhythmia risk"},
+    {"drug":"SSRIs","severity":"moderate","case":"Serotonin syndrome risk"},
+    {"drug":"Tramadol","severity":"moderate","case":"Serotonin syndrome risk"}
+  ],
+  "Palonosetron": [
+    {"drug":"SSRIs","severity":"moderate","case":"Serotonin syndrome risk"},
+    {"drug":"Tramadol","severity":"moderate","case":"Serotonin syndrome risk"},
+    {"drug":"QT-prolonging drugs","severity":"minor","case":"Low arrhythmia risk"}
+  ],
+  "Hyoscine butylbromide": [
+    {"drug":"Anticholinergics","severity":"moderate","case":"Additive side effects"},
+    {"drug":"Tricyclic antidepressants","severity":"moderate","case":"Increased anticholinergic effect"},
+    {"drug":"Antihistamines","severity":"minor","case":"Additive sedation"}
+  ],
+  "Dicycloverine": [
+    {"drug":"Anticholinergics","severity":"moderate","case":"Additive effects"},
+    {"drug":"Opioids","severity":"moderate","case":"Increased constipation"},
+    {"drug":"Antihistamines","severity":"minor","case":"Additive sedation"}
+  ],
+  "Mesalamine": [
+    {"drug":"Azathioprine","severity":"moderate","case":"Increased toxicity risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Renal toxicity risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Sulfasalazine": [
+    {"drug":"Methotrexate","severity":"moderate","case":"Increased toxicity"},
+    {"drug":"Warfarin","severity":"moderate","case":"May increase INR"},
+    {"drug":"Digoxin","severity":"minor","case":"Reduced absorption"}
+  ],
+  "Azathioprine": [
+    {"drug":"Allopurinol","severity":"major","case":"Severe bone marrow suppression"},
+    {"drug":"ACE inhibitors","severity":"moderate","case":"Leukopenia risk"},
+    {"drug":"Warfarin","severity":"minor","case":"Reduced anticoagulant effect"}
+  ],
+  "Methotrexate": [
+    {"drug":"NSAIDs","severity":"major","case":"Increased toxicity risk"},
+    {"drug":"Trimethoprim","severity":"major","case":"Severe bone marrow suppression"},
+    {"drug":"Probenecid","severity":"moderate","case":"Increased levels"}
+  ],
+  "Cyclosporine": [
+    {"drug":"Statins","severity":"major","case":"Myopathy risk"},
+    {"drug":"Grapefruit juice","severity":"major","case":"Increased drug levels"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Nephrotoxicity risk"}
+  ],
+  "Tacrolimus": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased toxicity"},
+    {"drug":"NSAIDs","severity":"moderate","case":"Nephrotoxicity risk"},
+    {"drug":"Live vaccines","severity":"major","case":"Infection risk"}
+  ],
+  "Mycophenolate mofetil": [
+    {"drug":"Antacids","severity":"moderate","case":"Reduced absorption"},
+    {"drug":"Cyclosporine","severity":"moderate","case":"Reduced levels"},
+    {"drug":"Live vaccines","severity":"major","case":"Reduced vaccine efficacy"}
+  ],
+  "Prednisolone": [
+    {"drug":"NSAIDs","severity":"major","case":"GI bleeding risk"},
+    {"drug":"Diuretics","severity":"moderate","case":"Hypokalemia risk"},
+    {"drug":"Vaccines","severity":"moderate","case":"Reduced immune response"}
+  ],
+  "Dexamethasone": [
+    {"drug":"NSAIDs","severity":"major","case":"GI bleeding risk"},
+    {"drug":"Phenytoin","severity":"moderate","case":"Reduced steroid effect"},
+    {"drug":"Warfarin","severity":"moderate","case":"May alter INR"}
   ]
 }
