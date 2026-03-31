@@ -72,7 +72,25 @@ app.get("/ai", (req, res) => {
 
   res.json({ reply });
 });
+// 📷 scan API
+app.post("/scan", upload.single("image"), async (req, res) => {
+    try {
+        let result = await Tesseract.recognize(req.file.path, "eng");
 
+        let text = result.data.text.toLowerCase();
+
+        let detected = Object.keys(data).filter(d =>
+            text.includes(d.toLowerCase())
+        );
+
+        res.json({
+            drugs: detected.slice(0, 5)
+        });
+
+    } catch (err) {
+        res.json({ drugs: [] });
+    }
+});
 // 🚀 Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
