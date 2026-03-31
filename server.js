@@ -77,14 +77,13 @@ app.get("/ai", async (req, res) => {
     let found = interactions?.find(
       x => x.drug.toLowerCase() === d2.toLowerCase()
     );
+ let localReply = "";
 
-    if (found) {
-      reply = `⚠️ ${d1} + ${d2}: ${found.case} (Severity: ${found.severity})`;
-      return res.json({ reply });
-    } else {
-      reply = `✅ No major interaction between ${d1} and ${d2}`;
-      return res.json({ reply });
-    }
+if (found) {
+  localReply = `⚠️ ${d1} + ${d2}: ${found.case} (Severity: ${found.severity})`;
+} else {
+  localReply = `✅ No major interaction between ${d1} and ${d2}`;
+}
   }
 
   // 🍎 Food interaction
