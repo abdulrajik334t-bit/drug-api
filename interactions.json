@@ -1059,4 +1059,104 @@
     {"drug":"Anticoagulants","severity":"major","case":"Additive bleeding risk"},
     {"drug":"Thrombolytics","severity":"major","case":"Severe bleeding risk"}
   ]
+  "Metformin": [
+    {"drug":"Cimetidine","severity":"moderate","case":"May increase metformin levels"},
+    {"drug":"Contrast dye","severity":"major","case":"Risk of lactic acidosis"},
+    {"drug":"Alcohol","severity":"major","case":"Increased risk of lactic acidosis"}
+  ],
+  "Glipizide": [
+    {"drug":"Warfarin","severity":"moderate","case":"May potentiate hypoglycemia"},
+    {"drug":"Alcohol","severity":"major","case":"Disulfiram-like reaction"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Glyburide": [
+    {"drug":"Warfarin","severity":"moderate","case":"May potentiate hypoglycemia"},
+    {"drug":"Alcohol","severity":"major","case":"Disulfiram-like reaction"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Glimepiride": [
+    {"drug":"Warfarin","severity":"moderate","case":"May potentiate hypoglycemia"},
+    {"drug":"Alcohol","severity":"major","case":"Disulfiram-like reaction"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia"}
+  ],
+  "Pioglitazone": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Rifampin","severity":"major","case":"May reduce effect"},
+    {"drug":"CYP2C8 inhibitors","severity":"moderate","case":"May increase drug levels"}
+  ],
+  "Rosiglitazone": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Rifampin","severity":"major","case":"May reduce effect"},
+    {"drug":"CYP2C8 inhibitors","severity":"moderate","case":"May increase drug levels"}
+  ],
+  "Acarbose": [
+    {"drug":"Digestive enzyme supplements","severity":"minor","case":"May reduce efficacy"},
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"}
+  ],
+  "Miglitol": [
+    {"drug":"Digestive enzyme supplements","severity":"minor","case":"May reduce efficacy"},
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"}
+  ],
+  "Sitagliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Rifampin","severity":"moderate","case":"May reduce levels"}
+  ],
+  "Saxagliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"May increase drug levels"}
+  ],
+  "Linagliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"May increase drug levels"}
+  ],
+  "Alogliptin": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"CYP2D6 inhibitors","severity":"moderate","case":"May increase levels"}
+  ],
+  "Exenatide": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Oral contraceptives","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Oral antibiotics","severity":"minor","case":"May reduce absorption"}
+  ],
+  "Liraglutide": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Oral contraceptives","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Oral antibiotics","severity":"minor","case":"May reduce absorption"}
+  ],
+  "Dulaglutide": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Oral contraceptives","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Oral antibiotics","severity":"minor","case":"May reduce absorption"}
+  ],
+  "Semaglutide": [
+    {"drug":"Insulin","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Oral contraceptives","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Oral antibiotics","severity":"minor","case":"May reduce absorption"}
+  ],
+  "Pramlintide": [
+    {"drug":"Insulin","severity":"major","case":"Severe additive hypoglycemia risk"},
+    {"drug":"Oral drugs","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"}
+  ],
+  "Insulin Aspart": [
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"May increase hypoglycemia risk"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"}
+  ],
+  "Insulin Lispro": [
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"May increase hypoglycemia risk"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"}
+  ],
+  "Insulin Glargine": [
+    {"drug":"Sulfonylureas","severity":"moderate","case":"Additive hypoglycemia risk"},
+    {"drug":"Alcohol","severity":"moderate","case":"May increase hypoglycemia risk"},
+    {"drug":"Beta blockers","severity":"minor","case":"May mask hypoglycemia symptoms"}
+  ]
 }
