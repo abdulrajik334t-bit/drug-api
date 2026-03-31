@@ -1388,5 +1388,80 @@
     {"drug":"Other antihypertensives","severity":"moderate","case":"Additive hypotension"},
     {"drug":"Phosphodiesterase inhibitors","severity":"major","case":"Severe hypotension risk"},
     {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"May increase drug levels"}
+  ],
+  "Montelukast": [
+    {"drug":"Phenobarbital","severity":"moderate","case":"May reduce montelukast levels"},
+    {"drug":"Rifampin","severity":"moderate","case":"May decrease effectiveness"},
+    {"drug":"Theophylline","severity":"minor","case":"No significant interaction"}
+  ],
+  "Zafirlukast": [
+    {"drug":"Warfarin","severity":"major","case":"May increase INR"},
+    {"drug":"Erythromycin","severity":"moderate","case":"May reduce zafirlukast levels"},
+    {"drug":"Aspirin","severity":"moderate","case":"May increase side effects"}
+  ],
+  "Omalizumab": [
+    {"drug":"Corticosteroids","severity":"minor","case":"May reduce steroid requirement"},
+    {"drug":"Antihistamines","severity":"minor","case":"Additive effect"},
+    {"drug":"Beta agonists","severity":"minor","case":"No major interaction"}
+  ],
+  "Cetirizine": [
+    {"drug":"Alcohol","severity":"moderate","case":"Increased sedation risk"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"},
+    {"drug":"Theophylline","severity":"minor","case":"May delay clearance"}
+  ],
+  "Loratadine": [
+    {"drug":"Ketoconazole","severity":"moderate","case":"May increase loratadine levels"},
+    {"drug":"Erythromycin","severity":"moderate","case":"May increase levels"},
+    {"drug":"Alcohol","severity":"minor","case":"Minimal sedation risk"}
+  ],
+  "Fexofenadine": [
+    {"drug":"Antacids","severity":"moderate","case":"May reduce absorption"},
+    {"drug":"Fruit juice","severity":"moderate","case":"Reduced bioavailability"},
+    {"drug":"Erythromycin","severity":"minor","case":"May increase levels"}
+  ],
+  "Diphenhydramine": [
+    {"drug":"Alcohol","severity":"major","case":"Severe sedation risk"},
+    {"drug":"Benzodiazepines","severity":"major","case":"Additive CNS depression"},
+    {"drug":"MAO inhibitors","severity":"moderate","case":"Prolonged effects"}
+  ],
+  "Chlorpheniramine": [
+    {"drug":"Alcohol","severity":"major","case":"Increased sedation"},
+    {"drug":"MAO inhibitors","severity":"moderate","case":"Enhanced anticholinergic effects"},
+    {"drug":"CNS depressants","severity":"moderate","case":"Additive sedation"}
+  ],
+  "Promethazine": [
+    {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"},
+    {"drug":"Opioids","severity":"major","case":"Respiratory depression risk"},
+    {"drug":"Anticholinergics","severity":"moderate","case":"Additive side effects"}
+  ],
+  "Ranitidine": [
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"},
+    {"drug":"Ketoconazole","severity":"moderate","case":"Reduced absorption"},
+    {"drug":"Theophylline","severity":"minor","case":"Minimal interaction"}
+  ],
+  "Famotidine": [
+    {"drug":"Ketoconazole","severity":"moderate","case":"Reduced absorption"},
+    {"drug":"Antacids","severity":"minor","case":"May reduce absorption"},
+    {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
+  ],
+  "Sucralfate": [
+    {"drug":"Fluoroquinolones","severity":"major","case":"Reduced absorption"},
+    {"drug":"Tetracyclines","severity":"major","case":"Reduced absorption"},
+    {"drug":"Phenytoin","severity":"moderate","case":"May reduce levels"}
+  ],
+  "Bismuth subsalicylate": [
+    {"drug":"Warfarin","severity":"major","case":"Increased bleeding risk"},
+    {"drug":"Aspirin","severity":"moderate","case":"Additive salicylate effect"},
+    {"drug":"Tetracyclines","severity":"moderate","case":"Reduced antibiotic absorption"}
+  ],
+  "Loperamide": [
+    {"drug":"P-gp inhibitors","severity":"major","case":"Risk of cardiac toxicity"},
+    {"drug":"Opioids","severity":"moderate","case":"Additive constipation"},
+    {"drug":"CYP3A4 inhibitors","severity":"moderate","case":"May increase levels"}
+  ],
+  "Ondansetron": [
+    {"drug":"QT-prolonging drugs","severity":"major","case":"Risk of arrhythmia"},
+    {"drug":"SSRIs","severity":"moderate","case":"Risk of serotonin syndrome"},
+    {"drug":"Apomorphine","severity":"major","case":"Severe hypotension risk"}
   ]
 }
