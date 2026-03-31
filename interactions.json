@@ -864,4 +864,104 @@
     {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased serum levels risk"},
     {"drug":"Statins","severity":"minor","case":"Monitor for interaction"}
   ]
+  "Captopril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Enalapril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Lisinopril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Ramipril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Perindopril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Quinapril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Benazepril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Fosinopril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Moexipril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Trandolapril": [
+    {"drug":"ARBs","severity":"major","case":"Additive hypotension risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce antihypertensive effect"}
+  ],
+  "Aliskiren": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Additive hypotension risk, hyperkalemia"},
+    {"drug":"ARBs","severity":"major","case":"Severe hyperkalemia possible"},
+    {"drug":"NSAIDs","severity":"moderate","case":"May reduce efficacy"}
+  ],
+  "Digoxin": [
+    {"drug":"Furosemide","severity":"major","case":"Hypokalemia increases digoxin toxicity risk"},
+    {"drug":"Amiodarone","severity":"major","case":"Increased digoxin levels, toxicity risk"},
+    {"drug":"Verapamil","severity":"moderate","case":"May increase digoxin levels"}
+  ],
+  "Amiodarone": [
+    {"drug":"Digoxin","severity":"major","case":"Increased digoxin levels, toxicity risk"},
+    {"drug":"Warfarin","severity":"major","case":"May increase INR"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interactions"}
+  ],
+  "Sotalol": [
+    {"drug":"Other QT-prolonging drugs","severity":"major","case":"Risk of torsades de pointes"},
+    {"drug":"Digoxin","severity":"moderate","case":"May increase arrhythmia risk"},
+    {"drug":"Beta blockers","severity":"moderate","case":"Additive bradycardia"}
+  ],
+  "Amrinone": [
+    {"drug":"Diuretics","severity":"moderate","case":"Additive hypotensive effect"},
+    {"drug":"Digoxin","severity":"moderate","case":"May increase levels"},
+    {"drug":"ACE inhibitors","severity":"minor","case":"Monitor blood pressure"}
+  ],
+  "Milrinone": [
+    {"drug":"Diuretics","severity":"moderate","case":"Additive hypotensive effect"},
+    {"drug":"Digoxin","severity":"moderate","case":"May increase levels"},
+    {"drug":"ACE inhibitors","severity":"minor","case":"Monitor blood pressure"}
+  ],
+  "Dobutamine": [
+    {"drug":"Beta blockers","severity":"major","case":"May reduce efficacy"},
+    {"drug":"Digoxin","severity":"minor","case":"Additive cardiac effects"},
+    {"drug":"MAO inhibitors","severity":"moderate","case":"May increase hypertensive response"}
+  ],
+  "Dopamine": [
+    {"drug":"Beta blockers","severity":"major","case":"May reduce efficacy"},
+    {"drug":"MAO inhibitors","severity":"moderate","case":"Hypertensive risk"},
+    {"drug":"Diuretics","severity":"minor","case":"Monitor fluid balance"}
+  ],
+  "Epinephrine": [
+    {"drug":"Beta blockers","severity":"major","case":"May cause severe hypertension"},
+    {"drug":"MAO inhibitors","severity":"major","case":"Hypertensive crisis risk"},
+    {"drug":"Digoxin","severity":"moderate","case":"May cause arrhythmia"}
+  ],
+  "Norepinephrine": [
+    {"drug":"Beta blockers","severity":"major","case":"Severe hypertension risk"},
+    {"drug":"MAO inhibitors","severity":"major","case":"Hypertensive crisis risk"},
+    {"drug":"Digoxin","severity":"moderate","case":"May cause arrhythmia"}
+  ]
 }
