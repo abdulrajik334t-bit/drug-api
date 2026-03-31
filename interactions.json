@@ -769,4 +769,99 @@
     {"drug":"Diuretics","severity":"minor","case":"Additive hypotensive effect"},
     {"drug":"Beta blockers","severity":"minor","case":"Monitor blood pressure"}
   ]
+  "Furosemide (Loop Diuretic)": [
+    {"drug":"Digoxin","severity":"major","case":"Increased risk of digoxin toxicity due to hypokalemia"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce diuretic efficacy"}
+  ],
+  "Bumetanide (Loop Diuretic)": [
+    {"drug":"Digoxin","severity":"major","case":"Increased risk of digoxin toxicity"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce diuretic efficacy"}
+  ],
+  "Torsemide": [
+    {"drug":"Digoxin","severity":"major","case":"Increased risk of digoxin toxicity"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce diuretic efficacy"}
+  ],
+  "Hydrochlorothiazide": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce antihypertensive effect"}
+  ],
+  "Chlorthalidone": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce antihypertensive effect"}
+  ],
+  "Indapamide": [
+    {"drug":"Digoxin","severity":"major","case":"Hypokalemia increases toxicity risk"},
+    {"drug":"Lithium","severity":"moderate","case":"May increase lithium levels"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce antihypertensive effect"}
+  ],
+  "Spironolactone": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Severe hyperkalemia possible"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Eplerenone": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Severe hyperkalemia possible"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Amiloride": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Severe hyperkalemia possible"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Triamterene": [
+    {"drug":"ACE inhibitors","severity":"major","case":"Hyperkalemia risk"},
+    {"drug":"Potassium supplements","severity":"major","case":"Severe hyperkalemia possible"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce efficacy"}
+  ],
+  "Verapamil": [
+    {"drug":"Beta blockers","severity":"major","case":"Risk of severe bradycardia and AV block"},
+    {"drug":"Digoxin","severity":"moderate","case":"May increase digoxin levels"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interactions"}
+  ],
+  "Diltiazem": [
+    {"drug":"Beta blockers","severity":"major","case":"Risk of severe bradycardia and AV block"},
+    {"drug":"Digoxin","severity":"moderate","case":"May increase digoxin levels"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interactions"}
+  ],
+  "Amlodipine": [
+    {"drug":"Simvastatin","severity":"moderate","case":"May increase statin levels"},
+    {"drug":"Beta blockers","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"NSAIDs","severity":"minor","case":"May reduce antihypertensive effect"}
+  ],
+  "Nifedipine": [
+    {"drug":"Beta blockers","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"Grapefruit juice","severity":"major","case":"May increase serum levels"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interaction"}
+  ],
+  "Felodipine": [
+    {"drug":"Grapefruit juice","severity":"major","case":"May increase serum levels"},
+    {"drug":"Beta blockers","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interaction"}
+  ],
+  "Nimodipine": [
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased plasma levels risk"},
+    {"drug":"Beta blockers","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interaction"}
+  ],
+  "Nicardipine": [
+    {"drug":"Beta blockers","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased serum levels risk"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interaction"}
+  ],
+  "Isradipine": [
+    {"drug":"Beta blockers","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased serum levels risk"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interaction"}
+  ],
+  "Clevidipine": [
+    {"drug":"Beta blockers","severity":"minor","case":"Additive hypotensive effect"},
+    {"drug":"CYP3A4 inhibitors","severity":"major","case":"Increased serum levels risk"},
+    {"drug":"Statins","severity":"minor","case":"Monitor for interaction"}
+  ]
 }
