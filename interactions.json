@@ -1863,7 +1863,7 @@
     {"drug":"Azathioprine","severity":"major","case":"Severe toxicity risk"},
     {"drug":"Theophylline","severity":"moderate","case":"Increased levels"},
     {"drug":"Warfarin","severity":"minor","case":"Monitor INR"}
-  ]
+  ],
   "Morphine": [
     {"drug":"Benzodiazepines","severity":"major","case":"Respiratory depression risk"},
     {"drug":"Alcohol","severity":"major","case":"Severe CNS depression"},
