@@ -18,7 +18,6 @@ try {
         console.log('✓ interactions.json loaded');
     } else {
         console.log('⚠ interactions.json not found, using default data');
-        // Default data if file doesn't exist
         drugData = {
             "aspirin": [
                 { "drug": "warfarin", "severity": "high", "case": "Increased risk of bleeding. Avoid combination." },
@@ -83,7 +82,6 @@ app.get("/foodcheck", (req, res) => {
         return res.json({ message: "Please enter both drug and food name" });
     }
 
-    // Common food-drug interactions database
     const foodInteractions = {
         "grapefruit": {
             "aspirin": "Moderate - May increase side effects",
@@ -118,7 +116,7 @@ app.get("/foodcheck", (req, res) => {
     }
 });
 
-// 🤖 AI CHATBOT (with OpenRouter)
+// 🤖 AI CHATBOT
 app.get("/ai", async (req, res) => {
     let msg = req.query.msg?.toLowerCase() || "";
 
@@ -127,7 +125,6 @@ app.get("/ai", async (req, res) => {
 
     let localReply = "";
 
-    // Local drug interaction
     if (foundDrugs.length >= 2) {
         let d1 = foundDrugs[0];
         let d2 = foundDrugs[1];
@@ -139,25 +136,21 @@ app.get("/ai", async (req, res) => {
             localReply = `✅ No major interaction found between ${d1} and ${d2}`;
         }
     }
-    // Food interaction
     else if (msg.includes("food") || msg.includes("grapefruit") || msg.includes("alcohol")) {
         localReply = "🍎 Some foods like grapefruit and alcohol can interact with medicines. Always maintain a 2-hour gap.";
     }
-    // Single drug info
     else if (foundDrugs.length === 1) {
         localReply = `💊 ${foundDrugs[0]} is a commonly used medicine. Always take as prescribed by your doctor.`;
     }
-    // General advice
     else {
         localReply = "💡 Always take medicines as prescribed. Never share your medicines with others.";
     }
 
-    // AI Response from OpenRouter
     try {
         let response = await axios.post(
             "https://openrouter.ai/api/v1/chat/completions",
             {
-                model: "mistralai/mistral-7b-instruct",
+                model: "google/gemini-2.0-flash-exp:free",
                 messages: [
                     {
                         role: "system",
@@ -171,7 +164,7 @@ app.get("/ai", async (req, res) => {
             },
             {
                 headers: {
-                    "Authorization": "Bearer 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",
+                    "Authorization": "Bearer YOUR_API_KEY_HERE",
                     "Content-Type": "application/json"
                 }
             }
@@ -182,24 +175,27 @@ app.get("/ai", async (req, res) => {
         res.json({ reply: finalReply });
 
     } catch (err) {
-        res.json({ reply: localReply || "AI service unavailable. Please consult your doctor." });
+        res.json({ reply: localReply });
     }
 });
 
-// 🔍 AUTOCOMPLETE
+// ========== AUTOCOMPLETE - FIXED ==========
 app.get("/autocomplete", (req, res) => {
     const query = req.query.query?.toLowerCase().trim() || "";
-    console.log("Autocomplete query:", query);
-
+    
+    if (!query) {
+        return res.json([]);
+    }
+    
     const drugNames = Object.keys(drugData);
     const matchedDrugs = drugNames.filter(name => name.toLowerCase().includes(query));
     const topResults = matchedDrugs.slice(0, 10);
     const formattedResults = topResults.map(name => ({ name: name }));
-
-    console.log("Autocomplete results:", formattedResults.length);
+    
     res.json(formattedResults);
 });
-// 📷 PRESCRIPTION SCAN
+
+// ========== PRESCRIPTION SCAN ==========
 app.post("/scan", upload.single("image"), async (req, res) => {
     try {
         if (!req.file) {
@@ -214,6 +210,11 @@ app.post("/scan", upload.single("image"), async (req, res) => {
         res.json({ drugs: [] });
     }
 });
+
+// Debug log
+console.log("📋 Available drugs for autocomplete:");
+console.log(Object.keys(drugData));
+
 // 🚀 Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
