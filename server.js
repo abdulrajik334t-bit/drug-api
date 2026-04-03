@@ -45,33 +45,50 @@ app.get("/check", (req, res) => {
   let d1 = req.query.drug1;
   let d2 = req.query.drug2;
 
+  console.log("🔍 Checking interaction between:", d1, "and", d2);
+
   if (!d1 || !d2) {
-    return res.json({ severity: "Error", message: "Enter both drugs" });
+    return res.json({ severity: "Error", message: "Please enter both drug names" });
   }
 
-  let drugs = Object.keys(data);
+  // Agar data empty hai
+  if (!data || Object.keys(data).length === 0) {
+    console.log("⚠️ No data loaded in interactions.json");
+    return res.json({ 
+      severity: "INFO", 
+      message: "Drug interaction database is empty. Please check interactions.json file." 
+    });
+  }
 
-  for (let key of drugs) {
+  let drugsList = Object.keys(data);
+  console.log("📚 Available drugs:", drugsList);
+
+  for (let key of drugsList) {
     let interactions = data[key];
 
-    for (let item of interactions) {
-      if (
-        (key.toLowerCase() === d1.toLowerCase() &&
-         item.drug.toLowerCase() === d2.toLowerCase()) ||
-        (key.toLowerCase() === d2.toLowerCase() &&
-         item.drug.toLowerCase() === d1.toLowerCase())
-      ) {
-        return res.json({
-          severity: item.severity.toUpperCase(),
-          message: item.case
-        });
+    // Agar interactions array hai
+    if (Array.isArray(interactions)) {
+      for (let item of interactions) {
+        if (
+          (key.toLowerCase() === d1.toLowerCase() &&
+           item.drug?.toLowerCase() === d2.toLowerCase()) ||
+          (key.toLowerCase() === d2.toLowerCase() &&
+           item.drug?.toLowerCase() === d1.toLowerCase())
+        ) {
+          console.log("✅ Interaction found:", item);
+          return res.json({
+            severity: item.severity?.toUpperCase() || "MODERATE",
+            message: item.case || "Interaction exists between these drugs"
+          });
+        }
       }
     }
   }
 
+  console.log("❌ No interaction found");
   res.json({
     severity: "LOW",
-    message: "No significant interaction found"
+    message: `No significant interaction found between ${d1} and ${d2}`
   });
 });
 
