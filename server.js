@@ -226,7 +226,9 @@ app.post("/scan", upload.single("image"), async (req, res) => {
         res.json({ drugs: [] });
     }
 });
-
+// Debug: Log all available drugs on server start
+console.log("📋 Available drugs for autocomplete:");
+console.log(Object.keys(drugData));
 // 🚀 Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
