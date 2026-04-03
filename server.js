@@ -22,28 +22,26 @@ app.get("/check", (req, res) => {
   let d2 = req.query.drug2;
 
   if (!d1 || !d2) {
-    return res.json({
-      severity: "Error",
-      message: "Enter both drugs"
-    });
+    return res.json({ severity: "Error", message: "Enter both drugs" });
   }
 
-  let key = Object.keys(data).find(
-    k => k.toLowerCase() === d1.toLowerCase()
-  );
+  let drugs = Object.keys(data);
 
-  if (key) {
+  for (let key of drugs) {
     let interactions = data[key];
 
-    let found = interactions.find(
-      x => x.drug.toLowerCase() === d2.toLowerCase()
-    );
-
-    if (found) {
-      return res.json({
-        severity: found.severity.toUpperCase(),
-        message: found.case
-      });
+    for (let item of interactions) {
+      if (
+        (key.toLowerCase() === d1.toLowerCase() &&
+         item.drug.toLowerCase() === d2.toLowerCase()) ||
+        (key.toLowerCase() === d2.toLowerCase() &&
+         item.drug.toLowerCase() === d1.toLowerCase())
+      ) {
+        return res.json({
+          severity: item.severity.toUpperCase(),
+          message: item.case
+        });
+      }
     }
   }
 
