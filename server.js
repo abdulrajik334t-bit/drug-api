@@ -22,7 +22,18 @@ const app = express();
 app.use(cors());
 
 // ✅ JSON load
-const data = require("./interactions.json");
+// Safe loading for interactions.json
+let data = {};
+try {
+    if (fs.existsSync('interactions.json')) {
+        data = require("./interactions.json");
+        console.log('✓ interactions.json loaded');
+    } else {
+        console.log('⚠ interactions.json not found');
+    }
+} catch (err) {
+    console.error('Error loading interactions.json:', err.message);
+}
 
 // 🟢 Home route
 app.get("/", (req, res) => {
