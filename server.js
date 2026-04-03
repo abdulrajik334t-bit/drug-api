@@ -4,7 +4,18 @@ const Tesseract = require("tesseract.js");
 const upload = multer({ dest: "uploads/" });
 const express = require("express");
 const fs = require('fs');
-const drugs = JSON.parse(fs.readFileSync('interaction.json')); 
+// Safe loading for interaction.json
+let drugs = {};
+try {
+    if (fs.existsSync('interaction.json')) {
+        drugs = JSON.parse(fs.readFileSync('interaction.json'));
+        console.log('✓ interaction.json loaded');
+    } else {
+        console.log('⚠ interaction.json not found');
+    }
+} catch (err) {
+    console.error('Error loading interaction.json:', err.message);
+}
 const cors = require("cors");
 
 const app = express();
