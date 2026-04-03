@@ -159,3 +159,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server running on port", PORT);
 });
+app.get('/autocomplete', (req, res) => {
+    const query = req.query.query.toLowerCase();   // User ne kya type kiya
+    const results = drugs.filter(d => d.name.toLowerCase().includes(query)).slice(0, 10);
+    res.json(results);  // Browser ko JSON me bhej de
+});
