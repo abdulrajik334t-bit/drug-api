@@ -3,6 +3,8 @@ const multer = require("multer");
 const Tesseract = require("tesseract.js");
 const upload = multer({ dest: "uploads/" });
 const express = require("express");
+const fs = require('fs');
+const drugs = JSON.parse(fs.readFileSync('interaction.json')); 
 const cors = require("cors");
 
 const app = express();
