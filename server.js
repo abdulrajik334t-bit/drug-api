@@ -4,211 +4,215 @@ const Tesseract = require("tesseract.js");
 const upload = multer({ dest: "uploads/" });
 const express = require("express");
 const fs = require('fs');
-// Safe loading for interaction.json
-let drugs = {};
-try {
-    if (fs.existsSync('interaction.json')) {
-        drugs = JSON.parse(fs.readFileSync('interaction.json'));
-        console.log('✓ interaction.json loaded');
-    } else {
-        console.log('⚠ interaction.json not found');
-    }
-} catch (err) {
-    console.error('Error loading interaction.json:', err.message);
-}
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
-// ✅ JSON load
-// Safe loading for interactions.json
-let data = {};
+// ✅ Load interactions.json
+let drugData = {};
 try {
     if (fs.existsSync('interactions.json')) {
-        data = require("./interactions.json");
+        drugData = JSON.parse(fs.readFileSync('interactions.json'));
         console.log('✓ interactions.json loaded');
     } else {
-        console.log('⚠ interactions.json not found');
+        console.log('⚠ interactions.json not found, using default data');
+        // Default data if file doesn't exist
+        drugData = {
+            "aspirin": [
+                { "drug": "warfarin", "severity": "high", "case": "Increased risk of bleeding. Avoid combination." },
+                { "drug": "ibuprofen", "severity": "moderate", "case": "Reduced heart protection. Use with caution." }
+            ],
+            "paracetamol": [
+                { "drug": "alcohol", "severity": "high", "case": "Risk of liver damage. Avoid alcohol." }
+            ],
+            "amoxicillin": [
+                { "drug": "warfarin", "severity": "moderate", "case": "May increase bleeding risk. Monitor INR." }
+            ]
+        };
     }
 } catch (err) {
     console.error('Error loading interactions.json:', err.message);
 }
 
-// 🟢 Home route
+// 🏠 Home route
 app.get("/", (req, res) => {
-  res.send("Drug Interaction API Running ✅");
+    res.send("Drug Interaction API Running ✅");
 });
 
-// 🔥 MAIN CHECK API
+// 🔥 DRUG-DRUG INTERACTION CHECK
 app.get("/check", (req, res) => {
-  let d1 = req.query.drug1;
-  let d2 = req.query.drug2;
+    let d1 = req.query.drug1?.toLowerCase().trim();
+    let d2 = req.query.drug2?.toLowerCase().trim();
 
-  console.log("🔍 Checking interaction between:", d1, "and", d2);
-
-  if (!d1 || !d2) {
-    return res.json({ severity: "Error", message: "Please enter both drug names" });
-  }
-
-  // Agar data empty hai
-  if (!data || Object.keys(data).length === 0) {
-    console.log("⚠️ No data loaded in interactions.json");
-    return res.json({ 
-      severity: "INFO", 
-      message: "Drug interaction database is empty. Please check interactions.json file." 
-    });
-  }
-
-  let drugsList = Object.keys(data);
-  console.log("📚 Available drugs:", drugsList);
-
-  for (let key of drugsList) {
-    let interactions = data[key];
-
-    // Agar interactions array hai
-    if (Array.isArray(interactions)) {
-      for (let item of interactions) {
-        if (
-          (key.toLowerCase() === d1.toLowerCase() &&
-           item.drug?.toLowerCase() === d2.toLowerCase()) ||
-          (key.toLowerCase() === d2.toLowerCase() &&
-           item.drug?.toLowerCase() === d1.toLowerCase())
-        ) {
-          console.log("✅ Interaction found:", item);
-          return res.json({
-            severity: item.severity?.toUpperCase() || "MODERATE",
-            message: item.case || "Interaction exists between these drugs"
-          });
-        }
-      }
+    if (!d1 || !d2) {
+        return res.json({ severity: "Error", message: "Please enter both drug names" });
     }
-  }
 
-  console.log("❌ No interaction found");
-  res.json({
-    severity: "LOW",
-    message: `No significant interaction found between ${d1} and ${d2}`
-  });
-});
+    let drugsList = Object.keys(drugData);
 
-// 🤖 AI ROUTE (FINAL PRO VERSION)
-app.get("/ai", async (req, res) => {
-  let msg = req.query.msg?.toLowerCase() || "";
-
-  let drugs = Object.keys(data);
-  let foundDrugs = drugs.filter(d =>
-    msg.includes(d.toLowerCase())
-  );
-
-  let localReply = "";
-  let reply = "";
-
-  // 🔥 Local drug interaction
-  if (foundDrugs.length >= 2) {
-    let d1 = foundDrugs[0];
-    let d2 = foundDrugs[1];
-
-    let interactions = data[d1];
-
-    let found = interactions?.find(
-      x => x.drug.toLowerCase() === d2.toLowerCase()
-    );
-
-    if (found) {
-      localReply = `⚠️ ${d1} + ${d2}: ${found.case} (Severity: ${found.severity})`;
-    } else {
-      localReply = `✅ No major interaction between ${d1} and ${d2}`;
-    }
-  }
-
-  // 🍎 Food interaction
-  else if (msg.includes("food") || msg.includes("diet")) {
-    localReply = "🍎 Some foods like grapefruit and alcohol can interact with medicines.";
-  }
-
-  // 🍺 Alcohol
-  else if (msg.includes("alcohol")) {
-    localReply = "🍺 Alcohol can increase side effects like drowsiness or liver damage.";
-  }
-
-  // 💊 Single drug info
-  else if (foundDrugs.length === 1) {
-    localReply = `💊 ${foundDrugs[0]} is a commonly used medicine. Always follow doctor's advice.`;
-  }
-
-  // 🤖 GPT AI (ALWAYS RUN)
-  try {
-    let response = await axios.post(
-      "https://openrouter.ai/api/v1/chat/completions",
-      {
-        model: "mistralai/mistral-7b-instruct",
-        messages: [
-          {
-            role: "system",
-            content: "You are a professional medical AI. Explain drug interactions, risks, food interactions, and precautions clearly in simple language."
-          },
-          {
-            role: "user",
-            content: msg
-          }
-        ]
-      },
-      {
-        headers: {
-          "Authorization": "Bearer sk-or-v1-a535177886caa9a2b8dc5adf",
-          "Content-Type": "application/json"
+    for (let key of drugsList) {
+        let interactions = drugData[key];
+        if (Array.isArray(interactions)) {
+            for (let item of interactions) {
+                let itemDrug = item.drug?.toLowerCase();
+                if ((key.toLowerCase() === d1 && itemDrug === d2) ||
+                    (key.toLowerCase() === d2 && itemDrug === d1)) {
+                    return res.json({
+                        severity: item.severity?.toUpperCase() || "MODERATE",
+                        message: item.case || "Interaction found between these drugs"
+                    });
+                }
+            }
         }
-      }
-    );
-
-    let aiReply = response.data.choices[0].message.content;
-
-    reply = localReply + "\n\n🤖 AI Explanation:\n" + aiReply;
-
-  } catch (err) {
-    reply = localReply || "AI not available right now.";
-  }
-
-  res.json({ reply });
-});
-
-// 📷 Prescription Scan API
-app.post("/scan", upload.single("image"), async (req, res) => {
-  try {
-    let result = await Tesseract.recognize(req.file.path, "eng");
-
-    let text = result.data.text.toLowerCase();
-
-    let detected = Object.keys(data).filter(d =>
-      text.includes(d.toLowerCase())
-    );
+    }
 
     res.json({
-      drugs: detected.slice(0, 5)
+        severity: "LOW",
+        message: `No significant interaction found between ${d1} and ${d2}`
     });
-
-  } catch (err) {
-    res.json({ drugs: [] });
-  }
 });
-app.get('/autocomplete', (req, res) => {
+
+// 🍎 DRUG-FOOD INTERACTION CHECK
+app.get("/foodcheck", (req, res) => {
+    let drug = req.query.drug?.toLowerCase().trim();
+    let food = req.query.food?.toLowerCase().trim();
+
+    if (!drug || !food) {
+        return res.json({ message: "Please enter both drug and food name" });
+    }
+
+    // Common food-drug interactions database
+    const foodInteractions = {
+        "grapefruit": {
+            "aspirin": "Moderate - May increase side effects",
+            "paracetamol": "Low - Generally safe",
+            "amoxicillin": "Low - No significant interaction"
+        },
+        "alcohol": {
+            "paracetamol": "High - Risk of liver damage. Avoid alcohol",
+            "aspirin": "Moderate - Increased risk of stomach bleeding",
+            "ibuprofen": "Moderate - Increased risk of stomach bleeding"
+        },
+        "dairy": {
+            "amoxicillin": "Moderate - May reduce absorption. Take 2 hours apart",
+            "aspirin": "Low - No significant interaction"
+        },
+        "caffeine": {
+            "aspirin": "Low - May increase stimulant effect",
+            "paracetamol": "Low - Generally safe"
+        }
+    };
+
+    if (foodInteractions[food] && foodInteractions[food][drug]) {
+        return res.json({ 
+            severity: "MODERATE",
+            message: foodInteractions[food][drug]
+        });
+    } else {
+        return res.json({ 
+            severity: "LOW",
+            message: `No known interaction between ${drug} and ${food}. However, always consult your doctor.`
+        });
+    }
+});
+
+// 🤖 AI CHATBOT (with OpenRouter)
+app.get("/ai", async (req, res) => {
+    let msg = req.query.msg?.toLowerCase() || "";
+
+    let drugsList = Object.keys(drugData);
+    let foundDrugs = drugsList.filter(d => msg.includes(d.toLowerCase()));
+
+    let localReply = "";
+
+    // Local drug interaction
+    if (foundDrugs.length >= 2) {
+        let d1 = foundDrugs[0];
+        let d2 = foundDrugs[1];
+        let interactions = drugData[d1];
+        let found = interactions?.find(x => x.drug.toLowerCase() === d2.toLowerCase());
+        if (found) {
+            localReply = `⚠️ ${d1} + ${d2}: ${found.case} (Severity: ${found.severity})`;
+        } else {
+            localReply = `✅ No major interaction found between ${d1} and ${d2}`;
+        }
+    }
+    // Food interaction
+    else if (msg.includes("food") || msg.includes("grapefruit") || msg.includes("alcohol")) {
+        localReply = "🍎 Some foods like grapefruit and alcohol can interact with medicines. Always maintain a 2-hour gap.";
+    }
+    // Single drug info
+    else if (foundDrugs.length === 1) {
+        localReply = `💊 ${foundDrugs[0]} is a commonly used medicine. Always take as prescribed by your doctor.`;
+    }
+    // General advice
+    else {
+        localReply = "💡 Always take medicines as prescribed. Never share your medicines with others.";
+    }
+
+    // AI Response from OpenRouter
+    try {
+        let response = await axios.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            {
+                model: "mistralai/mistral-7b-instruct",
+                messages: [
+                    {
+                        role: "system",
+                        content: "You are a professional medical AI assistant. Provide accurate, safe information about drugs, interactions, and general health. Always advise consulting a doctor."
+                    },
+                    {
+                        role: "user",
+                        content: msg
+                    }
+                ]
+            },
+            {
+                headers: {
+                    "Authorization": "Bearer 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",
+                    "Content-Type": "application/json"
+                }
+            }
+        );
+
+        let aiReply = response.data.choices[0].message.content;
+        let finalReply = localReply + "\n\n🤖 AI Doctor:\n" + aiReply;
+        res.json({ reply: finalReply });
+
+    } catch (err) {
+        res.json({ reply: localReply || "AI service unavailable. Please consult your doctor." });
+    }
+});
+
+// 🔍 AUTOCOMPLETE
+app.get("/autocomplete", (req, res) => {
     const query = req.query.query?.toLowerCase() || "";
-    
-    // Drugs ke saare keys (names) nikal lo
-    const drugNames = Object.keys(data);  // data hai interactions.json
-    
-    // Filter karo
+    const drugNames = Object.keys(drugData);
     const results = drugNames.filter(name => name.toLowerCase().includes(query)).slice(0, 10);
-    
-    // Array of objects banao
     const formattedResults = results.map(name => ({ name: name }));
-    
     res.json(formattedResults);
 });
-// 🚀 Server start
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Server running on port", PORT);
+
+// 📷 PRESCRIPTION SCAN
+app.post("/scan", upload.single("image"), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.json({ drugs: [] });
+        }
+        let result = await Tesseract.recognize(req.file.path, "eng");
+        let text = result.data.text.toLowerCase();
+        let detected = Object.keys(drugData).filter(d => text.includes(d.toLowerCase()));
+        res.json({ drugs: detected.slice(0, 5) });
+    } catch (err) {
+        console.error("Scan error:", err);
+        res.json({ drugs: [] });
+    }
 });
 
+// 🚀 Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log("Server running on port", PORT);
+});
