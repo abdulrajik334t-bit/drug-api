@@ -189,29 +189,16 @@ app.get("/ai", async (req, res) => {
 // 🔍 AUTOCOMPLETE
 app.get("/autocomplete", (req, res) => {
     const query = req.query.query?.toLowerCase().trim() || "";
-    
-    console.log("Autocomplete query:", query); // Debug log
-    
-    // Get all drug names from drugData (interactions.json)
+    console.log("Autocomplete query:", query);
+
     const drugNames = Object.keys(drugData);
-    
-    // Filter drugs that match the query
-    const matchedDrugs = drugNames.filter(name => 
-        name.toLowerCase().includes(query)
-    );
-    
-    // Take first 10 results
+    const matchedDrugs = drugNames.filter(name => name.toLowerCase().includes(query));
     const topResults = matchedDrugs.slice(0, 10);
-    
-    // Format as array of objects with 'name' property
     const formattedResults = topResults.map(name => ({ name: name }));
-    
-    console.log("Autocomplete results:", formattedResults.length); // Debug log
-    
+
+    console.log("Autocomplete results:", formattedResults.length);
     res.json(formattedResults);
 });
-console.log("📋 Available drugs for autocomplete:");
-console.log(Object.keys(drugData));
 // 📷 PRESCRIPTION SCAN
 app.post("/scan", upload.single("image"), async (req, res) => {
     try {
