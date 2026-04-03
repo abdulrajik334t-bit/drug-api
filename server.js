@@ -188,10 +188,26 @@ app.get("/ai", async (req, res) => {
 
 // 🔍 AUTOCOMPLETE
 app.get("/autocomplete", (req, res) => {
-    const query = req.query.query?.toLowerCase() || "";
+    const query = req.query.query?.toLowerCase().trim() || "";
+    
+    console.log("Autocomplete query:", query); // Debug log
+    
+    // Get all drug names from drugData (interactions.json)
     const drugNames = Object.keys(drugData);
-    const results = drugNames.filter(name => name.toLowerCase().includes(query)).slice(0, 10);
-    const formattedResults = results.map(name => ({ name: name }));
+    
+    // Filter drugs that match the query
+    const matchedDrugs = drugNames.filter(name => 
+        name.toLowerCase().includes(query)
+    );
+    
+    // Take first 10 results
+    const topResults = matchedDrugs.slice(0, 10);
+    
+    // Format as array of objects with 'name' property
+    const formattedResults = topResults.map(name => ({ name: name }));
+    
+    console.log("Autocomplete results:", formattedResults.length); // Debug log
+    
     res.json(formattedResults);
 });
 
