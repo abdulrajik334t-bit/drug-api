@@ -176,9 +176,18 @@ app.post("/scan", upload.single("image"), async (req, res) => {
   }
 });
 app.get('/autocomplete', (req, res) => {
-    const query = req.query.query.toLowerCase();   // User ne kya type kiya
-    const results = drugs.filter(d => d.name.toLowerCase().includes(query)).slice(0, 10);
-    res.json(results);  // Browser ko JSON me bhej de
+    const query = req.query.query?.toLowerCase() || "";
+    
+    // Drugs ke saare keys (names) nikal lo
+    const drugNames = Object.keys(data);  // data hai interactions.json
+    
+    // Filter karo
+    const results = drugNames.filter(name => name.toLowerCase().includes(query)).slice(0, 10);
+    
+    // Array of objects banao
+    const formattedResults = results.map(name => ({ name: name }));
+    
+    res.json(formattedResults);
 });
 // 🚀 Server start
 const PORT = process.env.PORT || 3000;
