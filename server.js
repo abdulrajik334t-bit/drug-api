@@ -41,36 +41,42 @@ app.get("/", (req, res) => {
 });
 
 // 🔥 DRUG-DRUG INTERACTION CHECK
-app.get("/check", (req, res) => {
-    let d1 = req.query.drug1?.toLowerCase().trim();
-    let d2 = req.query.drug2?.toLowerCase().trim();
+app.get("/check", async (req, res) => {
+    const drug1 = req.query.drug1?.toLowerCase().trim();
+    const drug2 = req.query.drug2?.toLowerCase().trim();
 
-    if (!d1 || !d2) {
+    if (!drug1 || !drug2) {
         return res.json({ severity: "Error", message: "Please enter both drug names" });
     }
 
-    let drugsList = Object.keys(drugData);
-
-    for (let key of drugsList) {
-        let interactions = drugData[key];
-        if (Array.isArray(interactions)) {
-            for (let item of interactions) {
-                let itemDrug = item.drug?.toLowerCase();
-                if ((key.toLowerCase() === d1 && itemDrug === d2) ||
-                    (key.toLowerCase() === d2 && itemDrug === d1)) {
-                    return res.json({
-                        severity: item.severity?.toUpperCase() || "MODERATE",
-                        message: item.case || "Interaction found between these drugs"
-                    });
-                }
-            }
-        }
+    try {
+        // ContraRadar API call - No API key needed
+        const response = await fetch('https://contraradar.vercel.app/api/interactions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ drugs: [drug1, drug2] })
+        });
+        
+        const data = await response.json();
+        
+        // Convert response to your frontend format
+        let severity = "LOW";
+        if (data.risk_level === "high") severity = "HIGH";
+        else if (data.risk_level === "moderate") severity = "MODERATE";
+        
+        res.json({
+            severity: severity,
+            message: data.interaction_description || `Interaction found between ${drug1} and ${drug2}`
+        });
+        
+    } catch (error) {
+        console.error("ContraRadar error:", error);
+        // Fallback response
+        res.json({
+            severity: "LOW",
+            message: `No significant interaction found between ${drug1} and ${drug2}`
+        });
     }
-
-    res.json({
-        severity: "LOW",
-        message: `No significant interaction found between ${d1} and ${d2}`
-    });
 });
 
 // 🍎 DRUG-FOOD INTERACTION CHECK
