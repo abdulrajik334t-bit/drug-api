@@ -51,7 +51,6 @@ app.get("/check", async (req, res) => {
     }
 
     try {
-        // ContraRadar API call - No API key needed
         const response = await fetch('https://contraradar.vercel.app/api/interactions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -60,7 +59,6 @@ app.get("/check", async (req, res) => {
         
         const data = await response.json();
         
-        // Convert response to your frontend format
         let severity = "LOW";
         if (data.risk_level === "high") severity = "HIGH";
         else if (data.risk_level === "moderate") severity = "MODERATE";
@@ -72,7 +70,6 @@ app.get("/check", async (req, res) => {
         
     } catch (error) {
         console.error("ContraRadar error:", error);
-        // Fallback response
         res.json({
             severity: "LOW",
             message: `No significant interaction found between ${drug1} and ${drug2}`
@@ -186,7 +183,7 @@ app.get("/ai", async (req, res) => {
     }
 });
 
-// ========== AUTOCOMPLETE - FIXED ==========
+// ========== AUTOCOMPLETE ==========
 app.get("/autocomplete", (req, res) => {
     const query = req.query.query?.toLowerCase().trim() || "";
     
@@ -202,7 +199,7 @@ app.get("/autocomplete", (req, res) => {
     res.json(formattedResults);
 });
 
-// ========== PRESCRIPTION SCAN ==========
+// ========== PRESCRIPTION SCAN (Tesseract - Printed Text) ==========
 app.post("/scan", upload.single("image"), async (req, res) => {
     try {
         if (!req.file) {
@@ -217,7 +214,8 @@ app.post("/scan", upload.single("image"), async (req, res) => {
         res.json({ drugs: [] });
     }
 });
-// ========== PRESCRIPTION SCAN WITH GEMINI ==========
+
+// ========== PRESCRIPTION SCAN WITH GEMINI (Handwriting Support) ==========
 app.post("/scan-prescription", upload.single("image"), async (req, res) => {
     try {
         if (!req.file) {
@@ -229,28 +227,28 @@ app.post("/scan-prescription", upload.single("image"), async (req, res) => {
         
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         
-        const prompt = `Extract all medicine names from this prescription. Return ONLY drug names as comma-separated list.`;
-        
+        // ✅ FIXED: Sahi order - image pehle, prompt baad mein
         const result = await model.generateContent([
-            prompt,
             {
                 inlineData: {
                     mimeType: "image/jpeg",
                     data: base64Image
                 }
-            }
+            },
+            { text: "Extract all medicine names from this prescription image. The image may contain handwritten text. Return ONLY the drug names as a comma-separated list. Example: aspirin, paracetamol, amoxicillin" }
         ]);
         
-        const response = result.response.text();
-        const detectedDrugs = response.toLowerCase().split(/[,\n]/).map(d => d.trim()).filter(d => d.length > 2);
+        const responseText = result.response.text();
+        const detectedDrugs = responseText.toLowerCase().split(/[,\n]/).map(d => d.trim()).filter(d => d.length > 2);
         
         res.json({ drugs: detectedDrugs.slice(0, 5) });
         
     } catch (err) {
-        console.error("Scan error:", err);
+        console.error("Gemini scan error:", err);
         res.json({ drugs: [] });
     }
 });
+
 // Debug log
 console.log("📋 Available drugs for autocomplete:");
 console.log(Object.keys(drugData));
