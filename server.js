@@ -1,5 +1,5 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("AIzaSyDqtPDRM45OOrTMxm0XfU");
+const genAI = new GoogleGenerativeAI("AIzaSyDqtPDRM45OxrFQzPCYWcUE3OrTMxm0XfU");
 const axios = require("axios");
 const multer = require("multer");
 const Tesseract = require("tesseract.js");
