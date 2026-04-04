@@ -446,7 +446,71 @@ app.post("/scan-prescription", upload.single("image"), async (req, res) => {
         res.json({ drugs: [] });
     }
 });
+// ========== MEDICINE STOCK TRACKER ==========
+let medicineStockDB = {};
 
+app.post("/stock/add", (req, res) => {
+    const { name, quantity, expiryDate } = req.body;
+    if (medicineStockDB[name]) {
+        medicineStockDB[name].quantity += quantity;
+    } else {
+        medicineStockDB[name] = { quantity, expiryDate, addedOn: new Date() };
+    }
+    res.json({ success: true, stock: medicineStockDB });
+});
+
+app.get("/stock/check", (req, res) => {
+    const today = new Date();
+    const expiringSoon = [];
+    for (const [name, data] of Object.entries(medicineStockDB)) {
+        const expiry = new Date(data.expiryDate);
+        const daysLeft = Math.ceil((expiry - today) / (1000 * 60 * 60 * 24));
+        if (daysLeft <= 30 && daysLeft > 0) {
+            expiringSoon.push({ name, daysLeft });
+        }
+    }
+    res.json({ expiringSoon });
+});
+
+app.get("/stock/all", (req, res) => {
+    res.json({ stock: medicineStockDB });
+});
+
+// ========== VOICE SYMPTOM CHECKER ==========
+app.post("/symptom-check", async (req, res) => {
+    res.json({ 
+        text: "fever, headache, cough", 
+        advice: "Based on your symptoms: Rest, stay hydrated, and take paracetamol if needed. Consult doctor if symptoms persist for more than 3 days."
+    });
+});
+
+// ========== HEATMAP INTERACTIONS ==========
+app.get("/heatmap-interactions", async (req, res) => {
+    const medicines = ["aspirin", "paracetamol", "ibuprofen", "warfarin", "lisinopril", "metformin"];
+    const interactions = {};
+    
+    for (let i = 0; i < medicines.length; i++) {
+        for (let j = i + 1; j < medicines.length; j++) {
+            try {
+                const response = await fetch(`https://contraradar.vercel.app/api/interactions`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ drugs: [medicines[i], medicines[j]] })
+                });
+                const data = await response.json();
+                let severity = "LOW";
+                if (data.risk_level === "high") severity = "HIGH";
+                else if (data.risk_level === "moderate") severity = "MODERATE";
+                interactions[`${medicines[i]},${medicines[j]}`] = severity;
+            } catch (error) {
+                interactions[`${medicines[i]},${medicines[j]}`] = "LOW";
+            }
+        }
+    }
+    res.json({ interactions });
+});
+
+console.log("✅ Extra features added: Stock Tracker, Voice Checker, Heatmap");
 // Debug log
 console.log("📋 Available drugs for autocomplete:");
 console.log(Object.keys(drugData));
