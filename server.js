@@ -5,7 +5,8 @@ const upload = multer({ dest: "uploads/" });
 const express = require("express");
 const fs = require('fs');
 const cors = require("cors");
-
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const genAI = new GoogleGenerativeAI("YOUR_GEMINI_API_KEY_HERE");
 const app = express();
 app.use(cors());
 app.use(express.json());
