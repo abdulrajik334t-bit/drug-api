@@ -217,7 +217,40 @@ app.post("/scan", upload.single("image"), async (req, res) => {
         res.json({ drugs: [] });
     }
 });
-
+// ========== PRESCRIPTION SCAN WITH GEMINI ==========
+app.post("/scan-prescription", upload.single("image"), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.json({ drugs: [] });
+        }
+        
+        const imageBuffer = fs.readFileSync(req.file.path);
+        const base64Image = imageBuffer.toString('base64');
+        
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        
+        const prompt = `Extract all medicine names from this prescription. Return ONLY drug names as comma-separated list.`;
+        
+        const result = await model.generateContent([
+            prompt,
+            {
+                inlineData: {
+                    mimeType: "image/jpeg",
+                    data: base64Image
+                }
+            }
+        ]);
+        
+        const response = result.response.text();
+        const detectedDrugs = response.toLowerCase().split(/[,\n]/).map(d => d.trim()).filter(d => d.length > 2);
+        
+        res.json({ drugs: detectedDrugs.slice(0, 5) });
+        
+    } catch (err) {
+        console.error("Scan error:", err);
+        res.json({ drugs: [] });
+    }
+});
 // Debug log
 console.log("📋 Available drugs for autocomplete:");
 console.log(Object.keys(drugData));
