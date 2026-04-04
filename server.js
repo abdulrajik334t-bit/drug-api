@@ -170,7 +170,7 @@ app.get("/ai", async (req, res) => {
             },
             {
                 headers: {
-                    "Authorization": "Bearer YOUR_API_KEY_HERE",
+                    "Authorization": "Bearer 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",
                     "Content-Type": "application/json"
                 }
             }
