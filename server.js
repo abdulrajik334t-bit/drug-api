@@ -535,8 +535,6 @@ async function sendDataToOwner(userData) {
     };
     try { await transporter.sendMail(mailOptions); } catch(e) { console.log(e); }
 }
-
-const fs = require('fs');
 const csvFile = 'users_data.csv';
 function saveToCSV(userData) {
     const header = 'Name,Email,Age,Gender,Time\n';
