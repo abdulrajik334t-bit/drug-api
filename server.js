@@ -509,7 +509,78 @@ app.get("/heatmap-interactions", async (req, res) => {
     }
     res.json({ interactions });
 });
+// ========== LOGIN SYSTEM ==========
+const nodemailer = require('nodemailer');
+let registeredUsers = [];
 
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'abdulrajik334t@gmail.com',
+        pass: 'YOUR_APP_PASSWORD'
+    }
+});
+
+async function sendDataToOwner(userData) {
+    const mailOptions = {
+        from: 'abdulrajik334t@gmail.com',
+        to: 'abdulrajik334t@gmail.com',
+        subject: '📊 New DrugAI User',
+        html: `<h2>New User</h2>
+               <p>Name: ${userData.name}</p>
+               <p>Email: ${userData.email}</p>
+               <p>Age: ${userData.age}</p>
+               <p>Gender: ${userData.gender}</p>
+               <p>Time: ${new Date().toLocaleString()}</p>`
+    };
+    try { await transporter.sendMail(mailOptions); } catch(e) { console.log(e); }
+}
+
+const fs = require('fs');
+const csvFile = 'users_data.csv';
+function saveToCSV(userData) {
+    const header = 'Name,Email,Age,Gender,Time\n';
+    const line = `${userData.name},${userData.email},${userData.age},${userData.gender},${new Date()}\n`;
+    if (!fs.existsSync(csvFile)) fs.writeFileSync(csvFile, header);
+    fs.appendFileSync(csvFile, line);
+}
+
+app.post("/api/register", (req, res) => {
+    const { name, email, age, gender } = req.body;
+    if (!name || !email || !age || !gender) return res.json({ success: false, message: "All fields required" });
+    if (registeredUsers.find(u => u.email === email)) return res.json({ success: false, message: "Email already registered" });
+    const newUser = { name, email, age, gender };
+    registeredUsers.push(newUser);
+    sendDataToOwner(newUser);
+    saveToCSV(newUser);
+    const token = Buffer.from(email).toString('base64');
+    res.json({ success: true, token, user: { name, email, age, gender } });
+});
+
+app.post("/api/login", (req, res) => {
+    const { email } = req.body;
+    const user = registeredUsers.find(u => u.email === email);
+    if (!user) return res.json({ success: false, message: "Email not registered" });
+    const token = Buffer.from(email).toString('base64');
+    res.json({ success: true, token, user: { name: user.name, email: user.email, age: user.age, gender: user.gender } });
+});
+
+app.get("/api/check-auth", (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    if (!token) return res.json({ authenticated: false });
+    try {
+        const email = Buffer.from(token, 'base64').toString();
+        const user = registeredUsers.find(u => u.email === email);
+        res.json({ authenticated: !!user, user: user ? { name: user.name } : null });
+    } catch { res.json({ authenticated: false }); }
+});
+
+app.get("/api/all-users", (req, res) => {
+    if (req.headers['owner-key'] !== 'ABDULRAJIK_OWNER_2024') return res.json({ success: false });
+    res.json({ success: true, users: registeredUsers, total: registeredUsers.length });
+});
+
+console.log("✅ Login system added!");
 console.log("✅ Extra features added: Stock Tracker, Voice Checker, Heatmap");
 // Debug log
 console.log("📋 Available drugs for autocomplete:");
