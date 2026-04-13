@@ -1,7 +1,9 @@
 {
   "name": "drug-api",
   "version": "1.0.0",
-  "description": "Drug Interaction API",
+  "engines": {
+    "node": "18.x"
+  },
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
