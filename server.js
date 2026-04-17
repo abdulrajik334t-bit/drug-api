@@ -580,41 +580,29 @@ app.get("/api/all-users", (req, res) => {
 // ========== REAL HEALTH NEWS API (FREE - NO API KEY) ==========
 app.get("/api/health-news", async (req, res) => {
     try {
-        // Free API - India ki health news ke liye
         const response = await fetch('https://saurav.tech/NewsAPI/top-headlines/category/health/in.json');
         const data = await response.json();
         
         if (data.articles && data.articles.length > 0) {
-            // Sirf 5 latest news bhej rahe hain
             const news = data.articles.slice(0, 5).map(article => ({
                 title: article.title,
-                description: article.description || "Click to read more about this health update",
+                description: article.description || "",
                 url: article.url,
                 source: article.source.name,
-                publishedAt: article.publishedAt,
-                imageUrl: article.urlToImage || null
+                publishedAt: article.publishedAt
             }));
             res.json({ success: true, news: news });
         } else {
-            // Fallback news agar API se kuch na mile
             res.json({ 
                 success: true, 
                 news: [
-                    { title: "WHO updates medicine safety guidelines", description: "New recommendations for drug safety worldwide", url: "#", source: "WHO", imageUrl: null },
-                    { title: "FDA approves new diabetes treatment", description: "Breakthrough drug for type 2 diabetes patients", url: "#", source: "FDA", imageUrl: null },
-                    { title: "Study: Daily aspirin benefits for heart health", description: "New research on low-dose aspirin use", url: "#", source: "Medical News Today", imageUrl: null },
-                    { title: "Paracetamol dosage: New recommendations", description: "Experts revise guidelines for safe use", url: "#", source: "Healthline", imageUrl: null }
+                    { title: "WHO updates medicine safety guidelines", url: "#", source: "WHO", publishedAt: new Date().toISOString() },
+                    { title: "FDA approves new diabetes treatment", url: "#", source: "FDA", publishedAt: new Date().toISOString() }
                 ]
             });
         }
     } catch (error) {
-        console.error("News API error:", error);
-        res.json({ 
-            success: true, 
-            news: [
-                { title: "Health news temporarily unavailable", description: "Please check back later for updates", url: "#", source: "System", imageUrl: null }
-            ]
-        });
+        res.json({ success: true, news: [] });
     }
 });
 
