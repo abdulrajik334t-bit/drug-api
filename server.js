@@ -605,7 +605,14 @@ app.get("/api/health-news", async (req, res) => {
         res.json({ success: true, news: [] });
     }
 });
-
+// ========== HEALTH CHECK ROUTE (Keep Alive) ==========
+app.get("/health", (req, res) => {
+    res.json({ 
+        status: "ok", 
+        time: new Date().toISOString(),
+        message: "Server is awake and running"
+    });
+});
 console.log("✅ Login system added!");
 console.log("✅ Extra features added: Stock Tracker, Voice Checker, Heatmap");
 // Debug log
