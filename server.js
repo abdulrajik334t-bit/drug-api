@@ -578,7 +578,7 @@ app.get("/api/all-users", (req, res) => {
     res.json({ success: true, users: registeredUsers, total: registeredUsers.length });
 });
 // ========== REAL-TIME HEALTH NEWS (GNews API) ==========
-const GNEWS_API_KEY = "YOUR_API_KEY_HERE"; // 🔥 YAHAN APNI API KEY PASTE KARO
+const GNEWS_API_KEY = "b539c16d35b22f0b5669514cf636455c"; // 🔥 YAHAN APNI API KEY PASTE KARO
 
 app.get("/api/health-news", async (req, res) => {
     try {
