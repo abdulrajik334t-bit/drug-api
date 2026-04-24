@@ -577,32 +577,32 @@ app.get("/api/all-users", (req, res) => {
     if (req.headers['owner-key'] !== 'ABDULRAJIK_OWNER_2024') return res.json({ success: false });
     res.json({ success: true, users: registeredUsers, total: registeredUsers.length });
 });
-// ========== REAL HEALTH NEWS API (FREE - NO API KEY) ==========
+// ========== REAL-TIME HEALTH NEWS (GNews API) ==========
+const GNEWS_API_KEY = "YOUR_API_KEY_HERE"; // 🔥 YAHAN APNI API KEY PASTE KARO
+
 app.get("/api/health-news", async (req, res) => {
     try {
-        const response = await fetch('https://saurav.tech/NewsAPI/top-headlines/category/health/in.json');
+        const response = await fetch(`https://gnews.io/api/v4/search?q=health%20medicine%20India&lang=en&max=7&apikey=${GNEWS_API_KEY}`);
         const data = await response.json();
         
         if (data.articles && data.articles.length > 0) {
-            const news = data.articles.slice(0, 5).map(article => ({
+            const news = data.articles.map(article => ({
                 title: article.title,
-                description: article.description || "",
+                description: article.description || "Click to read more",
                 url: article.url,
-                source: article.source.name,
+                source: article.source.name || "Health News",
                 publishedAt: article.publishedAt
             }));
             res.json({ success: true, news: news });
         } else {
-            res.json({ 
-                success: true, 
-                news: [
-                    { title: "WHO updates medicine safety guidelines", url: "#", source: "WHO", publishedAt: new Date().toISOString() },
-                    { title: "FDA approves new diabetes treatment", url: "#", source: "FDA", publishedAt: new Date().toISOString() }
-                ]
-            });
+            // Fallback news if API returns nothing
+            res.json({ success: true, news: [
+                { title: "GNews API limit reached. Please try again later.", source: "Info", url: "#" }
+            ]});
         }
     } catch (error) {
-        res.json({ success: true, news: [] });
+        console.error("GNews API error:", error);
+        res.json({ success: false, news: [] });
     }
 });
 // ========== HEALTH CHECK ROUTE (Keep Alive) ==========
